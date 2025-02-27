@@ -35,6 +35,12 @@ Perfil 5: Lucas Bevenides Monteiro
 
 
 
+Perfil 6: Fernanda Alves Oliveira
+
+![Fernanda Alves Oliveira](https://github.com/user-attachments/assets/763e6ab7-79a8-4d1a-9854-92f1b6a72b39)
+
+
+
 
 
 ## Histórias de Usuários
