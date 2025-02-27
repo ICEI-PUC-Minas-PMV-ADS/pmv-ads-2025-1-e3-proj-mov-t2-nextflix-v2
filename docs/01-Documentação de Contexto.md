@@ -14,11 +14,11 @@ Auxiliar na escolha de filmes e séries recomendando títulos e categorias semel
 
 Objetivos específicos:
 
-Otimizar a experiência do usuário;
-Aumentar a Retenção de Usuários em plataformas de streaming;
-Entregar uma plataforma com recomedações personalizadas;
-Diversificar e ampliar o catálogo;
-Navegação intuitiva e prática na plataforma.
+1. Otimizar a experiência do usuário;
+2. Aumentar a Retenção de Usuários em plataformas de streaming;
+3. Entregar uma plataforma com recomedações personalizadas;
+4. Diversificar e ampliar o catálogo;
+5. Navegação intuitiva e prática na plataforma.
 
 ## Justificativa
 
