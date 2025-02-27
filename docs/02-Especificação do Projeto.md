@@ -18,6 +18,12 @@ Perfil 2: Mariana Velasco Antunes
 ![Mariana Velasco Antunes](https://github.com/user-attachments/assets/2a9501f6-ad3d-46f5-9095-c1a0409a98c7)
 
 
+Perfil 3: Ricardo Mourani Figueiredo
+
+![Ricardo Mourani Figueiredo](https://github.com/user-attachments/assets/75d5bb0f-7b4c-4f2a-9a2b-01dae72a2885)
+
+
+
 
 ## Histórias de Usuários
 
