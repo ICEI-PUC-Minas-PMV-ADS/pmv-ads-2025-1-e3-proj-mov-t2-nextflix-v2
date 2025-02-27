@@ -23,6 +23,12 @@ Perfil 3: Ricardo Mourani Figueiredo
 ![Ricardo Mourani Figueiredo](https://github.com/user-attachments/assets/75d5bb0f-7b4c-4f2a-9a2b-01dae72a2885)
 
 
+Perfil 4: Sofia Alencar Takeda
+
+![Sofia Alencar Takeda](https://github.com/user-attachments/assets/5f836f62-7ff4-40c0-ab99-7e0a915baf7a)
+
+
+
 
 
 ## Histórias de Usuários
