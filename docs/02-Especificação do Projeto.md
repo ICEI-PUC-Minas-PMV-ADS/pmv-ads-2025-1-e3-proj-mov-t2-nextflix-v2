@@ -29,6 +29,12 @@ Perfil 4: Sofia Alencar Takeda
 
 
 
+Perfil 5: Lucas Bevenides Monteiro
+
+![Lucas Bevenides Monteiro](https://github.com/user-attachments/assets/97bd21e9-c662-4bf1-86f8-d411ffdc0e25)
+
+
+
 
 
 ## Histórias de Usuários
