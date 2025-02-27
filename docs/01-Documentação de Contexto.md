@@ -15,7 +15,7 @@ Auxiliar na escolha de filmes e séries recomendando títulos e categorias semel
 Objetivos específicos:
 
 1. Otimizar a experiência do usuário;
-2. Aumentar a Retenção de Usuários em plataformas de streaming;
+2. Aumentar a retenção de usuários em plataformas de streaming;
 3. Entregar uma plataforma com recomedações personalizadas;
 4. Diversificar e ampliar o catálogo;
 5. Navegação intuitiva e prática na plataforma.
@@ -26,9 +26,9 @@ A popularidade dos serviços de streaming e o crescente interesse por conteúdo 
 
 ## Público-Alvo
 
-Cinéfilos e amantes do cinema.
-Usuários de serviços de streaming.
-Críticos amadores e profissionais.
+Cinéfilos e amantes do cinema. <br>
+Usuários de serviços de streaming. <br>
+Críticos amadores e profissionais. <br>
 Qualquer pessoa interessada em descobrir e avaliar filmes.
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
