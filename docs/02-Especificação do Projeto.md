@@ -49,9 +49,13 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Buscar filmes pelo nome ou gênero  | Encontrar reviews e avaliações         |
+|Usuário do sistema  | Buscar filmes por nome ou gênero  | Encontrar reviews e avaliações         |
 |Usuário do sistema  | Avaliar filmes                     | Compartilhar minha opinião com a comunidade |
 |Administrador       | Gerenciar as permissões de uruários  | Garantir que cada pessoa tenha acesso apenas ás funcionalidades e informações relevantes ao seu papel |
+|Usuário do sistema  | Filtrar filmes por avaliação  | Encontrar filmes opções de filmes que sejam bons  |
+|Usuário do sistema  | Salvar opções de filmes em uma lista  | Poder assistir em outro dia sem precisar ficar sempre procurando  |
+|Usuário do sistema  | Seguir outros usuários  | Ver as avaliações de pessoas que confia e gosta do mesmo gênero de filmes |
+|Usuário do sistema  | Ter acesso a lista de filmes mais bem avaliados do momento  | Encontrar mais opções de filmes para assistir |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
