@@ -105,7 +105,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| A aplicação deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| A aplicação deve exigir senha de no mínimo 8 caracteres, com letras maiúsculas, minúsculas, números e caracteres especiais| MÉDIA |
-|RNF-004| A aplicaçãodeve permitir criação de resenhas apenas a usuários selecionados | MÉDIA |
+|RNF-004| A aplicação deve permitir criação de resenhas apenas a usuários selecionados | MÉDIA |
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
