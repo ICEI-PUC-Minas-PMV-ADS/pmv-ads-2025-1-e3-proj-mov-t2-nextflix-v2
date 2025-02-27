@@ -52,7 +52,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Usuário do sistema  | Buscar filmes por nome ou gênero  | Encontrar reviews e avaliações         |
 |Usuário do sistema  | Avaliar filmes                     | Compartilhar minha opinião com a comunidade |
 |Administrador       | Gerenciar as permissões de usuários  | Garantir que cada pessoa tenha acesso apenas ás funcionalidades e informações relevantes ao seu papel |
-|Usuário do sistema  | Filtrar filmes por avaliação  | Encontrar filmes opções de filmes que sejam bons  |
+|Usuário do sistema  | Filtrar filmes por avaliação  | Encontrar opções de bons filmes  |
 |Usuário do sistema  | Salvar opções de filmes em uma lista  | Poder assistir em outro dia sem precisar ficar sempre procurando  |
 |Usuário do sistema  | Seguir outros usuários  | Ver as avaliações de pessoas que confia e gosta do mesmo gênero de filmes |
 |Usuário do sistema  | Ter acesso a lista de filmes mais bem avaliados do momento  | Encontrar mais opções de filmes para assistir |
