@@ -95,8 +95,24 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| A aplicação deve permitir que o usuário crie e edite um perfil próprio e único(nome, foto de perfil e biografia).  | ALTA | 
+|RF-002| A aplicação deve permitir que o usuário faça o login em seu perfil.   | ALTA |
+|RF-003| O perfil do usuário deve conter as avaliações e comentários feitos por ele.   | BAIXA |
+|RF-004| A aplicação deve permitir que o usuário busque títulos por nome, gênero e/ou avaliação.   | ALTA |
+|RF-005| A aplicação deve permitir que o usuário veja reviews e a avaliação dos títulos dadas pelos outros usuários.   | MÉDIA |
+|RF-006| A aplicação deve permitir que o usuário avalie um título com uma nota de 1 a 10.   | ALTA |
+|RF-007| A aplicação deve prover ao usuário informações gerais sobre o título (sinopse, duração, classificação indicativa, elenco, média das avaliações).   | BAIXA |
+|RF-008| A aplicação deve permitir que o usuário salve títulos em listas personalizadas.   | BAIXA |
+|RF-009| A aplicação deve permitir que o usuário interaja com outros usuários sobre um título.   | MÉDIA |
+|RF-010| A aplicação deve permitir que o usuário faça um comentário sobre um título.   | ALTA |
+|RF-011| A aplicação deve prover ao usuário uma lista com recomendações de títulos baseados em sua preferência e histórico.   | BAIXA |
+|RF-012| A aplicação deve prover ao usuário uma lista com os títulos mais bem avaliados.   | MÉDIA |
+|RF-013| A aplicação deve prover ao usuário uma lista com os lançamento de novos títulos.   | MÉDIA |
+|RF-014| A aplicação deve permitir que o usuário siga outros usuários.   | BAIXA |
+|RF-015| A aplicação deve prover uma interface administrativa para a moderação do sistema.   | MÉDIA |
+|RF-016| A aplicação deve prover um jeito rápido de denunciar material inadequado.   | MÉDIA |
+|RF-017| A aplicação deve permitir que o usuário curta e comente o review de outro usuário.   | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
