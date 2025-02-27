@@ -13,6 +13,12 @@ Perfil 1: João Elias Castrovic
 ![João](https://github.com/user-attachments/assets/fd85ccac-c8eb-4ad1-89a1-651ab578840b)
 
 
+Perfil 2: Mariana Velasco Antunes
+
+![Mariana Velasco Antunes](https://github.com/user-attachments/assets/2a9501f6-ad3d-46f5-9095-c1a0409a98c7)
+
+
+
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
