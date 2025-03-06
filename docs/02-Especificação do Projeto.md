@@ -103,15 +103,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-006| A aplicação deve permitir que o usuário avalie um título com uma nota de 1 a 10.   | ALTA |
 |RF-007| A aplicação deve prover ao usuário informações gerais sobre o título (sinopse, duração, classificação indicativa, elenco, média das avaliações).   | BAIXA |
 |RF-008| A aplicação deve permitir que o usuário salve títulos em listas personalizadas.   | BAIXA |
-|RF-009| A aplicação deve permitir que o usuário interaja com outros usuários sobre um título.   | MÉDIA |
-|RF-010| A aplicação deve permitir que o usuário faça um comentário sobre um título.   | ALTA |
-|RF-011| A aplicação deve prover ao usuário uma lista com recomendações de títulos baseados em sua preferência e histórico.   | BAIXA |
-|RF-012| A aplicação deve prover ao usuário uma lista com os títulos mais bem avaliados.   | MÉDIA |
-|RF-013| A aplicação deve prover ao usuário uma lista com os lançamento de novos títulos.   | MÉDIA |
-|RF-014| A aplicação deve permitir que o usuário siga outros usuários.   | BAIXA |
-|RF-015| A aplicação deve prover uma interface administrativa para a moderação do sistema.   | MÉDIA |
-|RF-016| A aplicação deve prover um jeito rápido de denunciar material inadequado.   | MÉDIA |
-|RF-017| A aplicação deve permitir que o usuário curta e comente o review de outro usuário.   | MÉDIA |
+|RF-009| A aplicação deve permitir que o usuário faça um comentário sobre um título.   | ALTA |
+|RF-010| A aplicação deve prover ao usuário uma lista com recomendações de títulos baseados em sua preferência e histórico.   | BAIXA |
+|RF-011| A aplicação deve prover ao usuário uma lista com os títulos mais bem avaliados.   | MÉDIA |
+|RF-012| A aplicação deve prover ao usuário uma lista com os lançamento de novos títulos.   | MÉDIA |
+|RF-013| A aplicação deve permitir que o usuário siga outros usuários.   | BAIXA |
+|RF-014| A aplicação deve prover uma interface administrativa para a moderação do sistema.   | MÉDIA |
+|RF-015| A aplicação deve prover um jeito rápido de denunciar material inadequado.   | MÉDIA |
+|RF-016| A aplicação deve permitir que o usuário curta e comente o review de outro usuário.   | MÉDIA |
 
 
 ### Requisitos não Funcionais
@@ -122,7 +121,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 |RNF-003| A aplicação deve exigir senha de no mínimo 8 caracteres, com letras maiúsculas, minúsculas, números e caracteres especiais| MÉDIA |
 |RNF-004| A aplicação deve permitir criação de resenhas apenas a usuários selecionados | MÉDIA |
-|RNF-005| A aplicação deve ter suporte aos sistemas operacionais Android e IOS | MÉDIA |
+|RNF-005| A aplicação deve ter suporte ao sistema operacional Android | MÉDIA |
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
@@ -156,6 +155,9 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 > - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
+
+![Diagrama de casos de uso2 (1)](https://github.com/user-attachments/assets/e0d0d1fb-e496-4ee8-af86-c0958bb8b7a4)
+
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
