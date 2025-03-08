@@ -176,7 +176,30 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 
 A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
+| ID   |RF-01|RF-02|RF-03|RF-04|RF-05|RF-06|RF-07|RF-08|RF-09|RF-10|RF-11|RF-12|RF-13|RF-14|RF-15|RF-16|RNF-01|RNF-02|RNF-03|RNF-04|RNF-05|
+|------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|------|------|------|------|
+|RF-01 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |      
+|RF-02 |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |      
+|RF-03 |  x  |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-04 |     |     |     |     |  x  |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-05 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-06 |     |     |  x  |  x  |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-07 |     |     |     |  x  |     |  x  |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-08 |     |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-09 |     |  x  |     |  x  |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-10 |  x  |  x  |     |  x  |     |  x  |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-11 |     |     |     |     |  x  |  x  |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-12 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-13 |  x  |  x  |     |  x  |     |  x  |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-14 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RF-15 |     |     |     |     |     |     |     |     |     |     |     |     |     |  x  |     |     |      |      |      |      |      |
+|RF-16 |  x  |  x  |     |     |  x  |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |         
+|RNF-01|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |    
+|RNF-02|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RNF-03|  x  |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RNF-04|     |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+|RNF-05|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
+
 
 > **Links Úteis**:
 > - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
