@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+
 
 Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
 
@@ -123,22 +123,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-004| A aplicação deve permitir criação de resenhas apenas a usuários selecionados | MÉDIA |
 |RNF-005| A aplicação deve ter suporte ao sistema operacional Android | MÉDIA |
 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
@@ -146,29 +130,16 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| Usuário comum não poderá criar resenhas        |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+itos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
 ![Diagrama de casos de uso2 (1)](https://github.com/user-attachments/assets/e0d0d1fb-e496-4ee8-af86-c0958bb8b7a4)
 
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
 
 # Matriz de Rastreabilidade
 
@@ -199,12 +170,6 @@ A matriz deve contemplar todos os elementos relevantes que fazem parte do sistem
 |RNF-03|  x  |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
 |RNF-04|     |  x  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
 |RNF-05|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |      |      |      |      |      |
-
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
 
 
 # Gerenciamento de Projeto
