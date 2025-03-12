@@ -8,28 +8,203 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
+O Diagrama de Classes representa as classes do sistema, seus atributos e métodos, além dos relacionamentos entre elas. Aqui está a descrição textual do diagrama:
 
+# Diagrama de Classes
+
+O **Diagrama de Classes** representa as classes do sistema, seus atributos e métodos, além dos relacionamentos entre elas. Aqui está a descrição textual do diagrama:
+
+## Classes e Relacionamentos
+
+### Usuário
+- **Atributos**:
+  - `ID_Usuário: string`
+  - `Nome: string`
+  - `Email: string`
+  - `Senha: string`
+  - `Foto_Perfil: imagem`
+  - `Biografia: string`
+- **Métodos**:
+  - `criarAvaliacao()`
+  - `criarComentario()`
+  - `criarListaPersonalizada()`
+  - `seguirUsuario()`
+  - `curtirReview()`
+- **Relacionamentos**:
+  - 1:N com **Avaliação**
+  - 1:N com **Comentário**
+  - 1:N com **ListaPersonalizada**
+  - N:M com **Usuário** (seguir)
+  - N:M com **Review**
+
+### Filme/Série
+- **Atributos**:
+  - `ID_Título: string`
+  - `Nome: string`
+  - `Gênero: string`
+  - `Sinopse: string`
+  - `Duração: string`
+  - `Classificação_Indicativa: string`
+  - `Elenco: string`
+  - `Data_Lançamento: date`
+- **Métodos**:
+  - `receberAvaliacao()`
+  - `receberComentario()`
+- **Relacionamentos**:
+  - 1:N com **Avaliação**
+  - 1:N com **Comentário**
+  - N:M com **ListaPersonalizada**
+
+### Avaliação
+- **Atributos**:
+  - `ID_Avaliação: string`
+  - `ID_Usuário: string`
+  - `ID_Título: string`
+  - `Nota: int`
+  - `Comentário: string`
+  - `Data_Avaliação: date`
+- **Métodos**:
+  - `criarAvaliacao()`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:1 com **Filme/Série**
+
+### Comentário
+- **Atributos**:
+  - `ID_Comentário: string`
+  - `ID_Usuário: string`
+  - `ID_Título: string`
+  - `Texto: string`
+  - `Data_Comentário: date`
+- **Métodos**:
+  - `criarComentario()`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:1 com **Filme/Série**
+
+### ListaPersonalizada
+- **Atributos**:
+  - `ID_Lista: string`
+  - `ID_Usuário: string`
+  - `Nome_Lista: string`
+- **Métodos**:
+  - `adicionarFilme()`
+  - `removerFilme()`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:M com **Filme/Série**
+
+### Seguir
+- **Atributos**:
+  - `ID_Seguir: string`
+  - `ID_Usuário_Seguindo: string`
+  - `ID_Usuário_Seguido: string`
+- **Relacionamentos**:
+  - N:M com **Usuário**
+
+### Administrador
+- **Atributos**:
+  - `ID_Admin: string`
+  - `Nome: string`
+  - `Email: string`
+  - `Senha: string`
+- **Métodos**:
+  - `moderarAvaliacao()`
+  - `moderarComentario()`
+- **Relacionamentos**:
+  - Modera **Avaliação** e **Comentário**
+
+---
+
+# Modelo Entidade-Relacionamento (MER)
+
+O **Modelo Entidade-Relacionamento (MER)** descreve as entidades, seus atributos e os relacionamentos entre elas. Aqui está a descrição textual do MER:
+
+## Entidades e Relacionamentos
+
+### Usuário
+- **Atributos**:
+  - `ID_Usuário (PK)`
+  - `Nome`
+  - `Email`
+  - `Senha`
+  - `Foto_Perfil`
+  - `Biografia`
+- **Relacionamentos**:
+  - 1:N com **Avaliação**
+  - 1:N com **Comentário**
+  - 1:N com **ListaPersonalizada**
+  - N:M com **Usuário** (seguir)
+  - N:M com **Review**
+
+### Filme/Série
+- **Atributos**:
+  - `ID_Título (PK)`
+  - `Nome`
+  - `Gênero`
+  - `Sinopse`
+  - `Duração`
+  - `Classificação_Indicativa`
+  - `Elenco`
+  - `Data_Lançamento`
+- **Relacionamentos**:
+  - 1:N com **Avaliação**
+  - 1:N com **Comentário**
+  - N:M com **ListaPersonalizada**
+
+### Avaliação
+- **Atributos**:
+  - `ID_Avaliação (PK)`
+  - `ID_Usuário (FK)`
+  - `ID_Título (FK)`
+  - `Nota`
+  - `Comentário`
+  - `Data_Avaliação`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:1 com **Filme/Série**
+
+### Comentário
+- **Atributos**:
+  - `ID_Comentário (PK)`
+  - `ID_Usuário (FK)`
+  - `ID_Título (FK)`
+  - `Texto`
+  - `Data_Comentário`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:1 com **Filme/Série**
+
+### ListaPersonalizada
+- **Atributos**:
+  - `ID_Lista (PK)`
+  - `ID_Usuário (FK)`
+  - `Nome_Lista`
+- **Relacionamentos**:
+  - N:1 com **Usuário**
+  - N:M com **Filme/Série**
+
+### Seguir
+- **Atributos**:
+  - `ID_Seguir (PK)`
+  - `ID_Usuário_Seguindo (FK)`
+  - `ID_Usuário_Seguido (FK)`
+- **Relacionamentos**:
+  - N:M com **Usuário**
+
+### Administrador
+- **Atributos**:
+  - `ID_Admin (PK)`
+  - `Nome`
+  - `Email`
+  - `Senha`
+- **Relacionamentos**:
+  - Modera **Avaliação** e **Comentário**
 As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
 
 > - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
 > - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
 
-## Modelo ER
-
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
-## Esquema Relacional
-
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
-
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
 
 ## Modelo Físico
 
