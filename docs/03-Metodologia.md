@@ -3,7 +3,9 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+A equipe se baseia no modelo Gitflow para gerenciar o versionamento de código, que será descrito com mais detalhes abaixo. Os membros da equipe utilizam quadro kanban do Projects no Github para organização das tarefas, além de reuniões semanais (por Microsoft Teams).
+
+O Scrum Master divide as tarefas em cards, quebrando tarefas maiores em tarefas pequenas para facilitar a organização, e cada membro escolhe suas tarefas e movimenta os cards de acordo com a etapa em que se encontra.
 
 ## Relação de Ambientes de Trabalho
 
@@ -18,10 +20,11 @@ foi utilizado para hospedagem do repositório.
 
 O projeto segue a seguinte convenção para o nome de branches:
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+- `main`: versão estável já testada do software pronta para ambiente de produção
+- `dev`: versão de desenvolvimento do software pronta para ambiente de homologação
+- `feature`: adição de novas funcionalidades
+- `bugfix`: correção de bugs do sistema em ambiente homologação ou desenvolvimento
+- `hotfix`: correção de bugs do sistema em ambiente de produção
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -31,15 +34,10 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
+A ferramenta de versionamento escolhida foi o Github pela facilidade e bagagem técnica dos membros. A branch 'main' deve ter apenas versões estáveis já testadas do software, pois será a branch de produção. Optamos por seguir uma versão simplificada do modelo Gitflow no versionamento, onde as novas 'features' e 'bugfixes' serão mesclados na branch 'dev' de desenvolvimento/homologação, que por sua vez deverá ser mesclada na branch 'main' no lançamento de uma nova versão do software, quando tivermos funcionalidades o suficiente.
 
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+Para manter o versionamento organizado, cada integrante fará pull/merge pelo Github utilizando o modelo acima descrito, evitando commits diretos na branch 'main' ou 'dev' na fase de codificação da solução. Apenas é permitido commit de artefatos da documentação direto na main. 
+
 
 ## Gerenciamento de Projeto
 
@@ -48,10 +46,10 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 Apresente a divisão de papéis entre os membros do grupo.
 
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+- Scrum Master: Artur Maciel;
+- Product Owner: ;
+- Equipe de Desenvolvimento: André Dexheimer, Andre Fernandes, Artur Maciel, Eduardo Coutinho, Giovanni Shintaku, Hana Karolina, Luiz;
+- Equipe de Design: .
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
@@ -60,7 +58,15 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+O grupo faz reuniões semanais para acompanhamento do projeto e remoção de bloqueios. É utilizado o quadro kanban para organização das atividades dos integrantes, onde as tarefas da sprint são separadas por milestones. As tarefas podem ser categorizadas como:
+- `TODO`: tarefa a ser feita
+- `Doing`: tarefa sendo realizada por algum integrante
+- `Test`: tarefa em fase de testes se aplicável
+- `Done`: tarefa já realizada
+
+![image](https://github.com/user-attachments/assets/a13d946a-f1d5-4fdc-8366-ef908f1653f7)
+
+
  
 > **Links Úteis**:
 > - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
