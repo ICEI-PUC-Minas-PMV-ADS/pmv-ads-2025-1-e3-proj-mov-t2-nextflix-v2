@@ -64,7 +64,8 @@ O grupo faz reuniões semanais para acompanhamento do projeto e remoção de blo
 - `Test`: tarefa em fase de testes se aplicável
 - `Done`: tarefa já realizada
 
-![image](https://github.com/user-attachments/assets/a13d946a-f1d5-4fdc-8366-ef908f1653f7)
+![image](https://github.com/user-attachments/assets/9ccf638a-82ba-48b8-868a-e800c9acd3d4)
+
 
 
  
