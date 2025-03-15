@@ -34,7 +34,7 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-A ferramenta de versionamento escolhida foi o Github pela facilidade e bagagem técnica dos membros. A branch 'main' deve ter apenas versões estáveis já testadas do software, pois será a branch de produção. Optamos por seguir uma versão simplificada do modelo Gitflow no versionamento, onde as novas 'features' e 'bugfixes' serão mesclados na branch 'dev' de desenvolvimento/homologação, que por sua vez deverá ser mesclada na branch 'main' no lançamento de uma nova versão do software, quando tivermos funcionalidades o suficiente.
+A ferramenta de versionamento escolhida foi o Github pela facilidade e bagagem técnica dos membros. A branch 'main' deve ter apenas versões estáveis já testadas do software, pois será a branch de produção. Optamos por seguir uma versão simplificada do modelo Gitflow no versionamento, onde as novas 'features' e 'bugfixes' serão mesclados na branch 'dev' de desenvolvimento/homologação. Esta por sua vez deverá ser mesclada na branch 'main' no lançamento de uma nova versão do software, quando tivermos funcionalidades o suficiente.
 
 Para manter o versionamento organizado, cada integrante fará pull/merge pelo Github utilizando o modelo acima descrito, evitando commits diretos na branch 'main' ou 'dev' na fase de codificação da solução. Apenas é permitido commit de artefatos da documentação direto na main. 
 
