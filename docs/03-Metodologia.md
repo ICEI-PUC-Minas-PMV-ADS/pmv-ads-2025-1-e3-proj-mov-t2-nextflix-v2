@@ -58,12 +58,13 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
 
 ### Processo
 
-O grupo faz reuniões semanais para acompanhamento do projeto e remoção de bloqueios. É utilizado o quadro kanban para organização das atividades dos integrantes, onde as tarefas da sprint são separadas por milestones. As tarefas podem ser categorizadas como:
+O grupo faz reuniões semanais para acompanhamento do projeto e remoção de bloqueios. É utilizado o quadro kanban para organização das atividades dos integrantes, onde as tarefas de cada sprint são separadas por milestones. As tarefas podem ser categorizadas como:
 - `TODO`: tarefa a ser feita
 - `Doing`: tarefa sendo realizada por algum integrante
 - `Test`: tarefa em fase de testes se aplicável
 - `Done`: tarefa já realizada
 
+Quadro kanban em seu estado atual:
 ![image](https://github.com/user-attachments/assets/9ccf638a-82ba-48b8-868a-e800c9acd3d4)
 
 
