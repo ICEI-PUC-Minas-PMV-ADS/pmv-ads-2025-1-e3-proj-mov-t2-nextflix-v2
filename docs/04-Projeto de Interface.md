@@ -21,16 +21,10 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 > - [Fluxograma online: seis sites para fazer gráfico sem instalar nada | Produtividade | TechTudo](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
 
 ## Wireframes
+![image](https://github.com/user-attachments/assets/f04d5887-b732-4643-be46-d1ff9c866db8)
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+![image](https://github.com/user-attachments/assets/aa275711-a690-4b7d-98c3-f7d03505d5c7)
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+![image](https://github.com/user-attachments/assets/ac8e56c2-7423-45b2-bd6e-4bd423b1c7f1)
+
+![image](https://github.com/user-attachments/assets/0f4216cc-c9e6-4cda-8323-a22956453d46)
