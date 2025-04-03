@@ -7,6 +7,19 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
  Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
 
+# Paleta de Cores
+
+Escolhemos a paleta de cores a seguir por ser elegante e minimalista, inspirado nos streamings Netflix & Apple TV.
+
+![Paleta 3 - Netflix Style](https://github.com/user-attachments/assets/706e4112-c335-488b-b5d4-f6732b4c58db)
+
+Azul Noturno (#1B1F3B) → Fundo principal
+Vermelho (#E50914) → Destaques, botões e chamadas de ação
+Cinza Chumbo (#333333) → Estrutura e seções
+Branco Neve (#FFFFFF) → Tipografia e textos legíveis
+
+Perfeito para uma estética premium, lembrando serviços de streaming famosos.
+
 ## Diagrama de Fluxo
 
 ![image](https://github.com/user-attachments/assets/1daf8885-3a9f-4ca7-b8c1-2cb294c84858)
