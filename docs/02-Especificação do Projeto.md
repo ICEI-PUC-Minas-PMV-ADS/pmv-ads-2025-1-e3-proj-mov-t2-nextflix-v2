@@ -220,4 +220,6 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
+Gestão de orçamento baseada em valores atuais no mercado brasileiro.
+
 ![image](https://github.com/user-attachments/assets/97ab5c1d-5455-45e2-82b4-fa331a472cdc)
