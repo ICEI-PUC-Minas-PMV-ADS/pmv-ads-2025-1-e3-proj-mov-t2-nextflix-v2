@@ -178,9 +178,28 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+O projeto NextFlix será desenvolvido ao longo de 144 dias, distribuídos em cinco etapas, garantindo uma abordagem estruturada e progressiva para sua implementação.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+- **Etapa 1 - Definição e Planejamento `(35 dias)`**
+Durante essa fase inicial, será realizada a definição do projeto, estabelecendo seus objetivos e escopo. Também serão produzidos os documentos de contexto e especificação do problema, garantindo um entendimento claro dos desafios a serem resolvidos.
+
+- **Etapa 2 - Arquitetura e Design `(28 dias)`**
+Aqui, será detalhada a metodologia do projeto, definindo-se as abordagens para o desenvolvimento. A arquitetura da solução será projetada, assegurando uma base sólida para o software. Além disso, será criado o projeto de interface, garantindo que o NextFlix tenha uma navegação intuitiva e agradável. A programação inicial das funcionalidades será iniciada, junto com o planejamento dos testes e a definição dos principais indicadores de desempenho.
+
+- **Etapa 3 - Desenvolvimento e Testes `(35 dias)`**
+Nesta fase, será dada continuidade ao desenvolvimento das funcionalidades principais, garantindo que as implementações sigam os requisitos estabelecidos. Serão criados e executados os planos de testes de funcionalidades e usabilidade, documentando registros de testes para validar a eficácia do sistema e sua aderência aos critérios de qualidade.
+
+- **Etapa 4 - Refinamento e Ajustes `(21 dias)`**
+Com base nos resultados dos testes, serão realizados ajustes e otimizações na programação. Além disso, serão revisados e refinados os planos e registros de testes, garantindo que o NextFlix atenda a altos padrões de qualidade antes da fase final.
+
+- **Etapa 5 - Finalização e Apresentação `(18 dias)`**
+Na última etapa, os ajustes finais serão concluídos, refinando o desempenho, a segurança e a experiência do usuário. O projeto será preparado para a apresentação final, incluindo a produção de um vídeo explicativo e um documento em PDF para detalhar as principais entregas e resultados obtidos ao longo do processo.
+
+O diagrama a seguir apresenta a distribuição do tempo para o desenvolvimento do NextFlix, detalhando as atividades de cada etapa e seus respectivos prazos.
+
+![Diagrama Gerenciamento de tempo](https://github.com/user-attachments/assets/60067227-bae3-4646-9800-66d337805efb)
+
+
 
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
