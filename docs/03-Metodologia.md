@@ -69,10 +69,6 @@ A equipe se divide da seguinte forma:
 
 A equipe trabalha em sprints, onde as funcionalidades são desenvolvidas, revisadas e entregues continuamente, garantindo flexibilidade para ajustes e aprimoramentos conforme necessário.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
 
 ### Processo
 
