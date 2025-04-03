@@ -229,7 +229,7 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 
 ## Qualidade de Software
 
-Introdução
+**Introdução**
 
 A qualidade de software é um conjunto de características que garantem que um sistema atenda às necessidades do usuário, funcione corretamente, seja seguro e tenha bom desempenho. Um software de qualidade deve ser funcional, confiável, usável e manutenível, além de apresentar um alto nível de segurança e eficiência.
 
