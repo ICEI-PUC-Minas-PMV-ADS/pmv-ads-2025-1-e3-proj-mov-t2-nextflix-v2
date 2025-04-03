@@ -83,7 +83,8 @@ As tarefas foram categorizadas como:
 - `Done`: tarefa já realizada
 
 Quadro kanban em seu estado atual:
-![image](https://github.com/user-attachments/assets/9ccf638a-82ba-48b8-868a-e800c9acd3d4)
+
+![Backlog atual](https://github.com/user-attachments/assets/c7a5de28-daad-43a6-8b5e-f2a765a19728)
 
 
 
