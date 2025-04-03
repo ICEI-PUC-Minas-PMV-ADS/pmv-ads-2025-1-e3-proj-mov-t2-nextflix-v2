@@ -12,6 +12,14 @@ O Scrum Master divide as tarefas em cards, quebrando tarefas maiores em tarefas 
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
 Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
 
+Como o projeto é para ambiente mobile, a equipe optou por usar os seguintes frameworks e ambientes para facilitar o desenvolvimento:
+* React Native (desenvolvimento)
+* React Navigation (padrão para navegação em React Native)
+* Axios (REST)
+* Zustand ou Redux Toolkit (gerenciamento de estado)
+* SQLite (banco de dados)
+* Azure ou Vercel (hospedagem)
+
 ## Controle de Versão
 
 A ferramenta de controle de versão adotada no projeto foi o
