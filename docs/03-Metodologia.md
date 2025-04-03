@@ -45,11 +45,29 @@ Para manter o versionamento organizado, cada integrante fará pull/merge pelo Gi
 
 Apresente a divisão de papéis entre os membros do grupo.
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Artur Maciel;
-- Product Owner: ;
-- Equipe de Desenvolvimento: André Dexheimer, Andre Fernandes, Artur Maciel, Eduardo Coutinho, Giovanni Shintaku, Hana Karolina, Luiz;
-- Equipe de Design: .
+Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. 
+
+A organização da equipe está apresentada conforme abaixo:
+
+> Scrum Master
+> - Artur Maciel;
+
+> Product Owner
+> - Hana Karolina
+    
+> Equipe de Desenvolvimento
+> - André Dexheimer
+> - Andre Fernandes
+> - Artur Maciel
+> - Eduardo Coutinho
+> - Giovanni Shintaku
+> - Hana Karolina
+> - Luiz
+
+> Equipe de Design
+> - Andre Fernandes
+> - Giovanni Shintaki
+> - Luiz
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
