@@ -72,7 +72,11 @@ A equipe trabalha em sprints, onde as funcionalidades são desenvolvidas, revisa
 
 ### Processo
 
-O grupo faz reuniões semanais para acompanhamento do projeto e remoção de bloqueios. É utilizado o quadro kanban para organização das atividades dos integrantes, onde as tarefas de cada sprint são separadas por milestones. As tarefas podem ser categorizadas como:
+Para garantir o cumprimento das metas do projeto, é essencial um gerenciamento eficiente, aliado a uma equipe motivada e bem capacitada. Com isso em mente, foi desenvolvido um painel de acompanhamento, que fornece uma visão detalhada das responsabilidades de cada membro e do andamento das tarefas. Essa ferramenta facilita o monitoramento do progresso individual e do projeto como um todo, promovendo transparência e organização.
+
+A equipe realiza reuniões semanais para acompanhar o desenvolvimento das atividades, alinhar expectativas e remover possíveis impedimentos. Além disso, utilizamos o quadro Kanban para gerenciar as tarefas, organizando-as de acordo com as sprints e separando-as por milestones, garantindo um fluxo de trabalho estruturado e eficiente.
+As tarefas foram categorizadas como:
+
 - `TODO`: tarefa a ser feita
 - `Doing`: tarefa sendo realizada por algum integrante
 - `Test`: tarefa em fase de testes se aplicável
