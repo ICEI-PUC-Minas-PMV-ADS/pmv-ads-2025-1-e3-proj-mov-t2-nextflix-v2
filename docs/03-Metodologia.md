@@ -91,14 +91,14 @@ Quadro kanban em seu estado atual:
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de comunicação
+- Editor de código:
+VS Code e Expo.App
+
+- Ferramentas de comunicação:
+Microsoft Teams, Whatsapp e Discord
+
 - Ferramentas de desenho de tela (_wireframing_)
+Figma e Lucidchart
 
-O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
+Os editores de código foram escolhidos por possuírem uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas, além de serem amplamente utilizadas no dia-a-dia dos desenvolvedores. Por fim, para criar diagramas e telas utilizamos essas ferramentas por melhor captarem as necessidades da nossa solução.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
