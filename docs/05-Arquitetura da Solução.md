@@ -229,12 +229,49 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+Introdução
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+A qualidade de software é um conjunto de características que garantem que um sistema atenda às necessidades do usuário, funcione corretamente, seja seguro e tenha bom desempenho. Um software de qualidade deve ser funcional, confiável, usável e manutenível, além de apresentar um alto nível de segurança e eficiência.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+O NextFlix é um aplicativo de streaming que visa proporcionar uma experiência fluida e agradável para os usuários, permitindo que assistam a conteúdos diversos de forma organizada e intuitiva. Para garantir a qualidade do software, avaliamos os principais aspectos que influenciam na experiência do usuário e na eficiência do sistema.
+
+**Características de Qualidade**
+
+`Funcionalidade`
+
+- O NextFlix deve fornecer todas as funcionalidades essenciais, como busca de filmes e séries, recomendações personalizadas e criação de listas.
+
+- Precisa garantir a exibição correta dos conteúdos, sem falhas de carregamento ou exibição.
+
+- Deve seguir padrões e regulamentações de direitos autorais e acessibilidade.
+
+`Usabilidade`
+
+- O aplicativo deve ser intuitivo e fácil de navegar, com menus organizados e opções claras.
+
+- Deve permitir que novos usuários aprendam a utilizá-lo rapidamente, sem necessidade de treinamento prévio.
+
+- A interface deve ser responsiva e acessível para diferentes perfis de usuários.
+
+`Desempenho e Eficiência`
+
+- O NextFlix precisa ser rápido no carregamento dos vídeos e na navegação.
+
+- Deve usar os recursos do sistema de forma eficiente, garantindo que o consumo de internet e processamento seja otimizado.
+
+`Segurança`
+
+- Os dados dos usuários devem ser protegidos, garantindo confidencialidade e evitando acessos não autorizados.
+
+- Os pagamentos e assinaturas devem ser seguros, com protocolos de criptografia.
+
+`Manutenibilidade`
+
+- O código deve ser bem estruturado e modular, permitindo correções e atualizações frequentes.
+
+- A plataforma deve permitir a implementação rápida de novas funcionalidades e melhorias.
+
+
 
 > **Links Úteis**:
 >
