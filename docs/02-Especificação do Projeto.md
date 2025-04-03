@@ -137,7 +137,8 @@ itos funcionais e requisitos não funcionais?](https://analisederequisitos.com.b
 
 ## Diagrama de Casos de Uso
 
-![Diagrama de casos de uso2 (1)](https://github.com/user-attachments/assets/e0d0d1fb-e496-4ee8-af86-c0958bb8b7a4)
+![Diagrama de casos de uso drawio (1)](https://github.com/user-attachments/assets/420838b0-54bb-4da0-b46c-011ef1b9b962)
+
 
 
 
