@@ -43,11 +43,9 @@ Para manter o versionamento organizado, cada integrante fará pull/merge pelo Gi
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+Para garantir a organização e o sucesso do desenvolvimento do NextFlix, adotamos metodologias ágeis, utilizando o Scrum como base para a definição do processo de desenvolvimento. Essa abordagem permite um fluxo de trabalho dinâmico, promovendo a colaboração e a entrega incremental de valor ao projeto.
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. 
-
-A organização da equipe está apresentada conforme abaixo:
+A equipe se divide da seguinte forma:
 
 > Scrum Master
 > - Artur Maciel;
@@ -68,6 +66,8 @@ A organização da equipe está apresentada conforme abaixo:
 > - Andre Fernandes
 > - Giovanni Shintaki
 > - Luiz
+
+A equipe trabalha em sprints, onde as funcionalidades são desenvolvidas, revisadas e entregues continuamente, garantindo flexibilidade para ajustes e aprimoramentos conforme necessário.
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
