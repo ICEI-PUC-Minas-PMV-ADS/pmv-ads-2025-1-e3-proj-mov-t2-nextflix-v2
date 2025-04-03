@@ -14,9 +14,13 @@ Escolhemos a paleta de cores a seguir por ser elegante e minimalista, inspirado 
 ![Paleta 3 - Netflix Style](https://github.com/user-attachments/assets/706e4112-c335-488b-b5d4-f6732b4c58db)
 
 Azul Noturno (#1B1F3B) → Fundo principal
+
 Vermelho (#E50914) → Destaques, botões e chamadas de ação
+
 Cinza Chumbo (#333333) → Estrutura e seções
+
 Branco Neve (#FFFFFF) → Tipografia e textos legíveis
+
 
 Perfeito para uma estética premium, lembrando serviços de streaming famosos.
 
