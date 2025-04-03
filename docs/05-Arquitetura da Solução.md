@@ -235,6 +235,8 @@ A qualidade de software é um conjunto de características que garantem que um s
 
 O NextFlix é um aplicativo de streaming que visa proporcionar uma experiência fluida e agradável para os usuários, permitindo que assistam a conteúdos diversos de forma organizada e intuitiva. Para garantir a qualidade do software, avaliamos os principais aspectos que influenciam na experiência do usuário e na eficiência do sistema.
 
+-------------------------------------------------------------------------------------------------------------
+
 **Características de Qualidade**
 
 `Funcionalidade`
@@ -271,6 +273,27 @@ O NextFlix é um aplicativo de streaming que visa proporcionar uma experiência 
 
 - A plataforma deve permitir a implementação rápida de novas funcionalidades e melhorias.
 
+-------------------------------------------------------------------------------------------------------------
+
+**Tabela de Avaliação Técnica**
+
+| Subcaracterística | Métrica | Escala | Peso    |
+|--------------------|------------------------------------|----------------------------------------|--------------------|
+|Adequação  | O sistema cumpre suas funções corretamente?  | 1) Atende completamente 2) Atende parcialmente 3) Não atende | ALTO |
+|Acurácia  | O sistema entrega resultados corretos e consistentes?  | 1) Atende completamente 2) Atende parcialmente 3) Não atende | ALTO |
+|Conformidade  | O NextFlix segue padrões de acessibilidade e regulamentações?  | 1) Atende completamente 2) Atende parcialmente 3) Não atende | ALTO |
+|Usabilidade  | É fácil de aprender e usar?  | 1) Sim 2) Parcialmente 3) Não | ALTO |
+|Desempenho  | O tempo de carregamento dos vídeos é satisfatório?  | 1) Sim 2) Parcialmente 3) Não | ALTO |
+|Segurança  | O sistema protege os dados do usuário?  | 1) Sim 2) Não | ALTO |
+|Manutenibilidade  | O sistema permite atualizações sem grandes impactos?  | 1) Sim 2) Parcialmente 3) Não | ALTO |
+
+-------------------------------------------------------------------------------------------------------------
+
+**Conclusão**
+
+A avaliação da qualidade do NextFlix mostra que o software deve atender a critérios rigorosos de funcionalidade, usabilidade, desempenho, segurança e manutenção. A combinação desses fatores garante uma experiência positiva para os usuários e uma plataforma confiável para consumo de conteúdos digitais.
+
+Com uma estrutura modular, segurança robusta e foco na experiência do usuário, o NextFlix se posiciona como um serviço de alta qualidade no mercado de streaming.
 
 
 > **Links Úteis**:
