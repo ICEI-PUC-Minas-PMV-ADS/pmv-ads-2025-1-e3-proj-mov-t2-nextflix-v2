@@ -214,9 +214,37 @@ O gráfico de Gantt a seguir apresenta o cronograma detalhado do projeto, inclui
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+## Estrutura da Equipe
 
-![Simple Project Timeline](img/02-project-timeline.png)
+A equipe de desenvolvimento do projeto *NextFlix* foi estruturada de forma estratégica com foco na divisão clara de responsabilidades, permitindo maior produtividade e organização. Cada integrante assumiu funções específicas de acordo com seus conhecimentos, interesses e habilidades, favorecendo o desenvolvimento colaborativo e eficiente da aplicação.
+
+### Tabela de Distribuição de Funções
+
+| Nome              | Função Principal            | Responsabilidades                                                                 |
+|-------------------|-----------------------------|------------------------------------------------------------------------------------|
+| Hana              | Scrum Master / Desenvolvedora Front-End | Gerenciar o time, garantir boas práticas ágeis, desenvolver componentes da interface |
+| Caio              | Product Owner / Desenvolvedor Back-End  | Levantar requisitos, priorizar funcionalidades, implementar lógica de negócios      |
+| Participante X    | Designer UI/UX              | Criar protótipos, telas responsivas e experiência de usuário                       |
+| Participante Y    | Documentação e Testes       | Responsável pela escrita da documentação e aplicação de testes                     |
+
+ As funções podem sofrer adaptações ao longo do projeto conforme necessidades e imprevistos surgiram.
+
+## Metodologia Adotada
+
+Foi utilizada a **metodologia ágil Scrum**, adaptada à realidade acadêmica e disponibilidade de tempo de cada integrante. Reuniões rápidas ocorrem 1 vezes por semana para acompanhamento das tarefas.
+
+## Fluxo de Comunicação
+
+```mermaid
+graph LR
+A[Product Owner] --> B[Scrum Master]
+B --> C[Time de Desenvolvimento]
+C --> D[GitHub - Issues e Commits]
+C --> E[WhatsApp / Discord - Suporte Diário]
+B --> F[Trello - Planejamento]
+```
+
+
 
 ## Gestão de Orçamento
 
