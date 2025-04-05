@@ -220,12 +220,6 @@ A equipe de desenvolvimento do projeto *NextFlix* foi estruturada de forma estra
 
 ### Tabela de Distribuição de Funções
 
-| Nome              | Função Principal            | Responsabilidades                                                                 |
-|-------------------|-----------------------------|------------------------------------------------------------------------------------|
-| Hana              | Scrum Master / Desenvolvedora Front-End | Gerenciar o time, garantir boas práticas ágeis, desenvolver componentes da interface |
-| Caio              | Product Owner / Desenvolvedor Back-End  | Levantar requisitos, priorizar funcionalidades, implementar lógica de negócios      |
-| Participante X    | Designer UI/UX              | Criar protótipos, telas responsivas e experiência de usuário                       |
-| Participante Y    | Documentação e Testes       | Responsável pela escrita da documentação e aplicação de testes                     |
 
  As funções podem sofrer adaptações ao longo do projeto conforme necessidades e imprevistos surgiram.
 
