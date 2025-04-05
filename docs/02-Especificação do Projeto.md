@@ -214,8 +214,6 @@ O gráfico de Gantt a seguir apresenta o cronograma detalhado do projeto, inclui
 
 ## Gerenciamento de Equipe
 
-## Estrutura da Equipe
-
 Para garantir o bom andamento do projeto *NextFlix* , foi adotado um modelo de gestão de equipe baseado em metodologias ágeis, com ênfase no framework Scrum. A organização da equipe considera não apenas a divisão de papéis formais, mas também a colaboração contínua entre os membros, a comunicação transparente e o comprometimento coletivo com os objetivos do projeto.
 
 O gerenciamento da equipe se deu de forma horizontal, prezando pela escuta ativa, apoio mútuo e responsabilidade compartilhada. As decisões foram tomadas de forma participativa, com reuniões semanais, definindo tarefas claras e prioridades através de sprints.
