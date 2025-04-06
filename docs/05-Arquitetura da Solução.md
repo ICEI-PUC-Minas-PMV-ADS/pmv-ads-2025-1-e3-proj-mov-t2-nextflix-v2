@@ -35,7 +35,6 @@ O **Diagrama de Classes** representa as classes do sistema, seus atributos e mé
   - 1:N com **Comentário**
   - 1:N com **ListaPersonalizada**
   - N:M com **Usuário** (seguir)
-  - N:M com **Review**
 
 ### Filme/Série
 - **Atributos**:
