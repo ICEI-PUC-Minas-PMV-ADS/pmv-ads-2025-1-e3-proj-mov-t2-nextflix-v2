@@ -136,7 +136,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |05| Restringir o acesso a dados sensíveis apenas a administradores       |
 |06| Restringir o acesso ao conteúdo premium após o vencimento da assinatura       |
 
-itos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
