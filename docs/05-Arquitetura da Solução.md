@@ -1,10 +1,9 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+O software é estruturado em dois componentes principais que trabalham em conjunto para oferecer a solução: o Front-end e o Back-end. O Front-end é responsável pela interface do usuário e pela interação, enquanto o Back-end gerencia a lógica de negócios, o armazenamento de dados e a comunicação com o Front-end.
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+![image](https://github.com/user-attachments/assets/7188a29c-eae4-4407-b1d2-d84c8c9007a7)
 
-![Arquitetura da Solução](img/02-mob-arch.png)
 
 ## Diagrama de Classes
 
