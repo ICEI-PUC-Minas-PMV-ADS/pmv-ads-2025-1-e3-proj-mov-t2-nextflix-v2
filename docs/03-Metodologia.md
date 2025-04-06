@@ -1,7 +1,6 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
 
 A equipe se baseia no modelo Gitflow para gerenciar o versionamento de código, que será descrito com mais detalhes abaixo. Os membros da equipe utilizam quadro kanban do Projects no Github para organização das tarefas, além de reuniões semanais (por Microsoft Teams).
 
@@ -9,8 +8,7 @@ O Scrum Master divide as tarefas em cards, quebrando tarefas maiores em tarefas 
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e tecnologias. 
 
 Como o projeto é para ambiente mobile, a equipe optou por usar os seguintes frameworks e ambientes para facilitar o desenvolvimento:
 * React Native (desenvolvimento)
@@ -19,6 +17,8 @@ Como o projeto é para ambiente mobile, a equipe optou por usar os seguintes fra
 * Zustand ou Redux Toolkit (gerenciamento de estado)
 * SQLite (banco de dados)
 * Azure ou Vercel (hospedagem)
+* draw.io (criação de diagramas)
+* Figma (wireframes)
 
 ## Controle de Versão
 
