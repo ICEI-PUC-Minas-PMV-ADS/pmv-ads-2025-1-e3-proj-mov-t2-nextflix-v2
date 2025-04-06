@@ -212,9 +212,7 @@ O modelo físico pode ser encontrado no arquivo [`nextflix.sql`](https://github.
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+As tecnologias utilizadas estão descritas na  ['Relação de Ambientes de Trabalho'](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-nextflix/blob/main/docs/03-Metodologia.md) dentro da Metodologia do projeto.
 
 ## Hospedagem
 
