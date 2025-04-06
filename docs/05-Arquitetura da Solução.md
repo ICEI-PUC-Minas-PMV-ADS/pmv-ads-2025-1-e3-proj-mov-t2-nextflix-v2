@@ -10,6 +10,8 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 O Diagrama de Classes representa as classes do sistema, seus atributos e métodos, além dos relacionamentos entre elas. Aqui está a descrição textual do diagrama:
 
+![MER](https://github.com/user-attachments/assets/2e7dc326-40c5-449c-a590-4a9caaa9795b)
+
 # Diagrama de Classes
 
 O **Diagrama de Classes** representa as classes do sistema, seus atributos e métodos, além dos relacionamentos entre elas. Aqui está a descrição textual do diagrama:
