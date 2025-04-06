@@ -208,7 +208,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+O modelo físico pode ser encontrado no arquivo [`nextflix.sql`](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-nextflix/blob/main/src/nextflix.sql), localizado no diretório [`/src`](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-nextflix/tree/main/src) do projeto.
 
 ## Tecnologias Utilizadas
 
