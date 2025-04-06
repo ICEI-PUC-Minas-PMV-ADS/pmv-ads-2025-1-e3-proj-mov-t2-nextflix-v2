@@ -60,32 +60,27 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Há uma crescente alta de diferentes filmes e séries sendo lançados a todo momento mas que por vários motivos passam despercebidos pelas pessoas. Nesse contexto o Nextflix entrou tornando eficiente e simples a busca pelos títulos (séries/filmes) que combinam com o consumidor final provendo listas de recomendações de títulos baseadas no perfil do consumidor, avaliações e novos lançamentos.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+O aplicativo NextFlix propõe uma forma integrada de facilitar a busca eficiente das pessoas por títulos com base no interesse do usuário e promover a interação entre os mesmos. O aplicativo provê informações gerais sobre os filmes mas não detém o mesmo, não sendo possível ver os títulos pelo aplicativo.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Pesquisa de títulos 
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+![Processo 1](img/diagramaProcessoHome.png)
 
-![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – Interação usuário para usuário e usuário com aplicativo  
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
-
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](img/diagramaProcessoInteracao.png)
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+Seguem, as métricas que traduzem o desempenho do aplicativo Nextflix que guiam e medem o quão eficaz estam sendo suas principais funcionalidades, estabelecendo um padrão à ser seguido e mantido em conformidade à busca pela melhora contínua dos serviços prestados 
 
-Usar o seguinte modelo: 
+![Indicadores de Desempenho](img/IndicadoresDeDesempenho.png)
 
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
 
 ## Requisitos
 
