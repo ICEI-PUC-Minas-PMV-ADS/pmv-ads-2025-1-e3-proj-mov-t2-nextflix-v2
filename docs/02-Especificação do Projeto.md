@@ -131,7 +131,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Usuário comum não poderá criar resenhas        |
-
+|03| O acesso conteúdo premium será permitido apenas para os uruários assinantes        |
+|04| Apenas administradores podemadicionar ou remover conteúdos da plataforma       |
 
 itos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
