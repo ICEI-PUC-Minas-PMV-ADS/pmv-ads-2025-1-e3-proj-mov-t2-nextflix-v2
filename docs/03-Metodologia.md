@@ -92,7 +92,8 @@ As tarefas foram categorizadas como:
 
 Quadro kanban em seu estado atual:
 
-![Backlog atual](https://github.com/user-attachments/assets/c7a5de28-daad-43a6-8b5e-f2a765a19728)
+![Kanban](https://github.com/user-attachments/assets/3d49c6bc-9021-4006-843c-67b2ce5ca316)
+
 
 
 ### Ferramentas
