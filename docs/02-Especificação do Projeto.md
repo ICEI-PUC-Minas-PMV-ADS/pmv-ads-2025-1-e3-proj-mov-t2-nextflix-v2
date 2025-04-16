@@ -95,7 +95,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| O perfil do usuário deve conter as avaliações e comentários feitos por ele.   | BAIXA |
 |RF-004| A aplicação deve permitir que o usuário busque títulos por nome, gênero e/ou avaliação.   | ALTA |
 |RF-005| A aplicação deve permitir que o usuário veja reviews e a avaliação dos títulos dadas pelos outros usuários.   | MÉDIA |
-|RF-006| A aplicação deve permitir que o usuário avalie um título com uma nota de 1 a 10.   | ALTA |
+|RF-006| A aplicação deve permitir que o usuário avalie um título com uma nota de 1 a 5 estrelas.   | ALTA |
 |RF-007| A aplicação deve prover ao usuário informações gerais sobre o título (sinopse, duração, classificação indicativa, elenco, média das avaliações).   | BAIXA |
 |RF-008| A aplicação deve permitir que o usuário salve títulos em listas personalizadas.   | BAIXA |
 |RF-009| A aplicação deve permitir que o usuário faça um comentário sobre um título.   | ALTA |
