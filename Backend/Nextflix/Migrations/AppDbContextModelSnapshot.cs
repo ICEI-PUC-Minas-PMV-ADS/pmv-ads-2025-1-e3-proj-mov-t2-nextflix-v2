@@ -7,6 +7,7 @@ using Nextflix.Data;
 
 #nullable disable
 
+
 namespace Nextflix.Migrations
 {
     [DbContext(typeof(AppDbContext))]
