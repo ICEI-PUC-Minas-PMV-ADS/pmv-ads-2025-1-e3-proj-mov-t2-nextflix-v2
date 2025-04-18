@@ -1,0 +1,49 @@
+# .NET
+bin/
+obj/
+
+# Folders de configuração do Visual Studio
+.vs/
+.vscode/
+
+# Configurações do Rider
+.idea/
+
+# Arquivos de usuário do Visual Studio (evitar que sejam compartilhados)
+.vs2019/
+.vs2017/
+.vs2015/
+
+# Arquivos do sistema operacional (Mac, Linux, Windows)
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+log/
+
+# Arquivos temporários do NuGet
+.nuget/
+
+# Arquivos de pacote do NuGet
+packages/
+
+# Arquivos de backup do Visual Studio
+*_i.csm
+*_i.csb
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Arquivos de dependência do .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Arquivos do compilador
+*.dbmdl
+
+# Configurações específicas de ambiente (se estiver usando)
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
