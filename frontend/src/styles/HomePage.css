@@ -1,0 +1,71 @@
+.container {
+  padding: 16px;
+  padding-bottom: 40px;
+  background-color: #fff;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 0 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.categoriaContainer {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.categoriaBtn {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 8px 16px;
+  background: white;
+  cursor: pointer;
+}
+
+.recomendadosList {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.card {
+  min-width: 140px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  background: white;
+  flex-shrink: 0;
+}
+
+.posterPlaceholder {
+  width: 100px;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin: 0 auto 8px auto;
+}
+
+.cardTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
