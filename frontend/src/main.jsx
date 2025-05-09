@@ -1,3 +1,4 @@
+import HomePage from './Pages/HomePage.jsx';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/reset-senha" element={<ResetSenha />} />
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
