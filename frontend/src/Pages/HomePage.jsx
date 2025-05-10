@@ -15,7 +15,7 @@ const HomePage = () => {
   ];
 
   // Defina a chave da API aqui
-  const API_KEY = 'c0f300a4f387cdcb4f6e7e88028a072a'; // Substitua com a sua chave de API TMDb
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Substitua com a sua chave de API TMDb
   const BASE_URL = 'https://api.themoviedb.org/3'; // URL base da API TMDb
 
   // Função para buscar filmes com base no texto digitado na barra de pesquisa
