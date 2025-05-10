@@ -1,71 +1,73 @@
 .container {
-  padding: 16px;
-  padding-bottom: 40px;
-  background-color: #fff;
+  padding: 20px;
 }
 
 .header {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .searchInput {
-  height: 50px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  padding: 0 16px;
-  margin-bottom: 24px;
   width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .sectionTitle {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin: 20px 0;
 }
 
 .categoriaContainer {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .categoriaBtn {
+  padding: 10px 20px;
   border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 8px 16px;
-  background: white;
   cursor: pointer;
+  background-color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.categoriaBtn.active {
+  background-color: #007bff;
+  color: white;
 }
 
 .recomendadosList {
   display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding-bottom: 16px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
-  min-width: 140px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 12px;
+  width: 150px;
+  padding: 10px;
   text-align: center;
-  background: white;
-  flex-shrink: 0;
-}
-
-.posterPlaceholder {
-  width: 100px;
-  height: 150px;
-  background-color: #ddd;
-  border-radius: 8px;
-  margin: 0 auto 8px auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 .cardTitle {
-  font-weight: bold;
-  margin-bottom: 4px;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.posterPlaceholder {
+  height: 200px;
+  background-color: #ddd;
+  margin-bottom: 10px;
 }
