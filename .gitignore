@@ -94,3 +94,7 @@ Dockerfile.prod
 
 # Arquivos temporários do Docker
 docker-compose.override.yml
+
+
+# Arquivo Para esconder a Chave API TMDb
+.env
