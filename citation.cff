@@ -1,29 +1,25 @@
-message: Please cite this software using these metadata.
-title:
+message: Os serviços de streaming e cinemas oferecem uma ampla variedade de conteúdos, tornando a escolha de filmes desafiadora.
+A NextFlix surge para ajudar os indecisos, oferecendo reviews e opiniões sobre filmes e séries, facilitando a decisão do espectador sobre o que assistir.
+
+title: Nextflix
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Dexheimer 
+    given-names: Andre
+  - family-names: Fernandes
+    given-names: Andre
+  - family-names: Maciel
+    given-names: Artur
+  - family-names: Junior
+    given-names: Eduardo
+  - family-names: Shintaku
+    given-names: Giovanni 
+  - family-names: Siqueira 
+    given-names: Hana
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-keywords:
-  - 
-  - 
+    family-names: Junior
+    given-names: Udo
+
 repository-code: 
 version: 1.0.0
 date-released: 2023-10-31
