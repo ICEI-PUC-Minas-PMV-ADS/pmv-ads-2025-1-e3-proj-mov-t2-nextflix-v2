@@ -17,6 +17,7 @@ namespace Nextflix.Models
     public List <Film> Films { get; set; } = new List<Film>();
     //public List<List<Film>> FilmsLists { get; set; } = new();
     public List<CustomFilmList> FilmLists { get; set; } = new();
+    //public List<Comment> Comments { get; set; } = new();
   }
 }
 
