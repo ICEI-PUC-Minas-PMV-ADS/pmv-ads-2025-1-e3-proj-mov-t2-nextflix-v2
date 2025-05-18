@@ -10,7 +10,7 @@ using Nextflix.Models;
 
 namespace Nextflix.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Users")]
     [ApiController]
     public class UsersController : ControllerBase
     {
