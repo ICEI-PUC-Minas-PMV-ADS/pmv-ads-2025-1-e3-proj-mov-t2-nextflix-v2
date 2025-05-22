@@ -1,4 +1,4 @@
-using Nextflix.Models.CustomFilmsList;
+using Nextflix.Models;
 
 namespace Nextflix.Models
 {
@@ -19,16 +19,4 @@ namespace Nextflix.Models
         public List<CustomFilmsList> FilmLists { get; set; } = new();
     ////
     }
-}
-{
-  public int Id { get; set; }
-
-  public string Name { get; set; } 
-
-  public int UserId { get; set; }
-
-  [JsonIgnore]
-  public User User { get; set; }
-
-  public List<Film> Films { get; set; } = new();
 }
