@@ -13,6 +13,6 @@ namespace Nextflix.Models
       [JsonIgnore]
       public User User { get; set; }
 
-      public List<Film> Films { get; set; } = new();
+      public List<Movie> Movies { get; set; } = new();
     }
 }

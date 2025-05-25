@@ -23,14 +23,14 @@ namespace Nextflix.Controllers
 
         // GET: api/CustomFilmLists
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CustomFilmList>>> GetCustomFilmList()
+        public async Task<ActionResult<IEnumerable<CustomFilmsList>>> GetCustomFilmList()
         {
             return await _context.CustomFilmList.ToListAsync();
         }
 
         // GET: api/CustomFilmLists/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CustomFilmList>> GetCustomFilmList(int id)
+        public async Task<ActionResult<CustomFilmsList>> GetCustomFilmList(int id)
         {
             var customFilmList = await _context.CustomFilmList.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace Nextflix.Controllers
         // PUT: api/CustomFilmLists/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomFilmList(int id, CustomFilmList customFilmList)
+        public async Task<IActionResult> PutCustomFilmList(int id, CustomFilmsList customFilmList)
         {
             if (id != customFilmList.Id)
             {
@@ -76,7 +76,7 @@ namespace Nextflix.Controllers
         // POST: api/CustomFilmLists
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CustomFilmList>> PostCustomFilmList(CustomFilmList customFilmList)
+        public async Task<ActionResult<CustomFilmsList>> PostCustomFilmList(CustomFilmsList customFilmList)
         {
             _context.CustomFilmList.Add(customFilmList);
             await _context.SaveChangesAsync();
