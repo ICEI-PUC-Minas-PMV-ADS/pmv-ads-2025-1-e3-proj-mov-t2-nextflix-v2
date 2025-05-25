@@ -76,12 +76,12 @@ namespace Nextflix.Controllers
         // POST: api/CustomFilmLists
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CustomFilmsList>> PostCustomFilmList(CustomFilmsList customFilmList)
+        public async Task<ActionResult<CustomFilmsList>> PostCustomFilmList(CustomFilmsList customFilmsList)
         {
-            _context.CustomFilmList.Add(customFilmList);
+            _context.CustomFilmList.Add(customFilmsList);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCustomFilmList", new { id = customFilmList.Id }, customFilmList);
+            return CreatedAtAction("GetCustomFilmsList", new { id = customFilmsList.Id }, customFilmsList);
         }
 
         // DELETE: api/CustomFilmLists/5

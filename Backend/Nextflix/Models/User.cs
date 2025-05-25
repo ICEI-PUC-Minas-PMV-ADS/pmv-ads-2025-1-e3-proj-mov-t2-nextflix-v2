@@ -25,6 +25,5 @@ namespace Nextflix.Models
         public List<Movie> Movies { get; set; } = new();
         public List<CustomFilmsList> FilmLists { get; set; } = new();
         public List<Comment> Comments { get; set; } = new();
-        ////
     }
 }

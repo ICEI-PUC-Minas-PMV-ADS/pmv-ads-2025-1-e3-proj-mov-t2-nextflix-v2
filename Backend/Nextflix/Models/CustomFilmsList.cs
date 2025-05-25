@@ -2,7 +2,7 @@
 
 namespace Nextflix.Models
 {
-    public class CustomFilmList
+    public class CustomFilmsList
     {
       public int Id { get; set; }
 
