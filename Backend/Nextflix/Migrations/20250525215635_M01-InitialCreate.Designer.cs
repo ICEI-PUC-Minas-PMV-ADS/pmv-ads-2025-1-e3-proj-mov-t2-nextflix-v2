@@ -12,8 +12,8 @@ using Nextflix.Data;
 namespace Nextflix.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250524180034_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250525215635_M01-InitialCreate")]
+    partial class M01InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

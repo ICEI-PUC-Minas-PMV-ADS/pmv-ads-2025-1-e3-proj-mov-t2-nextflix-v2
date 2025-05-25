@@ -10,7 +10,6 @@ namespace Nextflix.Models
     public class User
     {
         public Guid UserId { get; set; }
-        
         [Required]
         public string Name { get; set; }
         public string Email { get; set; }
