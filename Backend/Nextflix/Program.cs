@@ -38,6 +38,7 @@ namespace Nextflix
       {
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.UseDeveloperExceptionPage();
       }
 
       app.UseCors("AllowAll");

@@ -1,88 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Image, Button, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
-import api from '../services/api';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, FlatList, Alert } from 'react-native';
 
-const UserProfile = () => {
-  const [user, setUser] = useState(null);
-  const userId = 1; // ou pegue de login/contexto
+export default function App() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await api.get(`/user/${userId}`);
-        setUser(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar usuário:', error);
+  const fetchUsers = async () => {
+    setLoading(true);
+    try {
+      console.log('Iniciando fetch...');
+      const response = await fetch('http://192.168.18.5:5075/api/users');
+      console.log('Resposta status:', response.status);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Dados recebidos:', data);
+        setUsers(data);
+        Alert.alert('Sucesso', `✅ Requisição bem-sucedida! Código de status: ${response.status}`);
+      } else {
+        Alert.alert('Erro', `❌ Erro ao buscar usuários. Código de status: ${response.status}`);
       }
-    };
+    } catch (error) {
+      Alert.alert('Erro', error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchUser();
-  }, []);
-
-  if (!user) {
-    return (
-      <View style={styles.loading}>
-        <ActivityIndicator size="large" color="#007bff" />
-      </View>
-    );
-  }
+  const renderUser = ({ item }) => (
+    <View style={styles.userCard}>
+      <Text style={styles.userText}><Text style={styles.bold}>Nome:</Text> {item.name}</Text>
+      <Text style={styles.userText}><Text style={styles.bold}>Email:</Text> {item.email ?? 'Não informado'}</Text>
+      <Text style={styles.userText}><Text style={styles.bold}>Bio:</Text> {item.bio ?? 'Sem bio'}</Text>
+      <Text style={styles.userText}><Text style={styles.bold}>Role:</Text> {item.role ?? 'Sem função'}</Text>
+    </View>
+  );
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {user.photoBase64 && (
-        <Image
-          source={{ uri: `data:image/jpeg;base64,${user.photoBase64}` }}
-          style={styles.avatar}
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={fetchUsers} disabled={loading}>
+        <Text style={styles.buttonText}>{loading ? 'Carregando...' : 'Buscar Usuários'}</Text>
+      </TouchableOpacity>
+
+      {loading ? (
+        <ActivityIndicator size="large" color="#007AFF" />
+      ) : (
+        <FlatList
+          data={users}
+          keyExtractor={item => item.userId.toString()}
+          renderItem={renderUser}
+          contentContainerStyle={{ paddingBottom: 20 }}
+          showsVerticalScrollIndicator={false}
         />
       )}
-      <Text style={styles.name}>{user.name}</Text>
-      <Text style={styles.email}>{user.email}</Text>
-      <Text style={styles.bio}>{user.bio}</Text>
-
-      <View style={styles.buttonContainer}>
-        <Button title="Seguir" color="#007bff" onPress={() => alert('Seguindo...')} />
-      </View>
-    </ScrollView>
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#ffffff',
-    flexGrow: 1,
-  },
-  loading: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
+    padding: 20,
+    paddingTop: 50,
   },
-  avatar: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+  button: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 12,
+    borderRadius: 25,
+    alignItems: 'center',
     marginBottom: 20,
   },
-  name: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  email: {
+  buttonText: {
+    color: '#fff',
+    fontWeight: '600',
     fontSize: 16,
-    color: '#666',
-    marginBottom: 10,
   },
-  bio: {
-    fontSize: 14,
-    textAlign: 'center',
-    marginBottom: 20,
-    paddingHorizontal: 10,
+  userCard: {
+    backgroundColor: '#f0f8ff',
+    padding: 15,
+    borderRadius: 15,
+    marginBottom: 15,
   },
-  buttonContainer: {
-    width: '100%',
-    marginTop: 10,
+  userText: {
+    fontSize: 16,
+    marginBottom: 6,
+  },
+  bold: {
+    fontWeight: '700',
   },
 });
-
-export default UserProfile;
