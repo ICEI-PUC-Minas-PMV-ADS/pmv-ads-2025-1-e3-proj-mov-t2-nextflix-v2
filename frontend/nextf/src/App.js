@@ -1,8 +1,8 @@
 import React from 'react';
-import User from './screens/User';
+import User2 from './screens/User2';
 
 const App = () => {
-  return <User />;
+  return <User2 />;
 };
 
 export default App;
