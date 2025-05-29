@@ -19,8 +19,14 @@ namespace Nextflix
       // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
       builder.Services.AddEndpointsApiExplorer();
       builder.Services.AddSwaggerGen();
+      
+      builder.Services.AddControllers()
+      .ConfigureApiBehaviorOptions(options =>
+      {
+       options.SuppressModelStateInvalidFilter = false;
+      });
 
-      builder.Services.AddCors(options =>
+        builder.Services.AddCors(options =>
       {
         options.AddPolicy("AllowAll", policy =>
         {
@@ -47,6 +53,7 @@ namespace Nextflix
 
       app.UseAuthorization();
 
+      app.UseDeveloperExceptionPage();
 
       app.MapControllers();
 
