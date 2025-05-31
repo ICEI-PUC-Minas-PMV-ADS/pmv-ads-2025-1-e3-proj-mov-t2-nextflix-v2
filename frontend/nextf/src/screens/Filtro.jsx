@@ -41,6 +41,37 @@ const Filtro = () => {
         return date.toLocaleDateString('pt-BR');
     };
 
+    {/* criando JSON oara mandar para o BackEnd */ }
+
+    const aplicarFiltros = async () => {
+        const filtros = {
+            genero,
+            avaliacao,
+            dataLancamentoDe: moment(date).format('YYYY-MM-DD'),
+            dataLancamentoAte: moment(date2).format('YYYY-MM-DD'),
+            duracao,
+            ordem,
+        };
+
+        console.log('Filtros a enviar:', filtros);
+
+        fetch(' backEnd aqui - como vou fazer isso sem mexer no backEnd?', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(filtros),
+        })
+            .then((res) => res.json())
+            .then((dados) => {
+                console.log('Filmes recebidos do backend:', dados);
+                
+            })
+            .catch((erro) => {
+                console.error('Erro ao buscar filmes:', erro);
+            });
+    };
+
     return (
         <View style={styles.container}>
             <Portal>
@@ -155,7 +186,7 @@ const Filtro = () => {
                         icon="check"
                         mode="contained"
                         style={styles.button}
-                        onPress={() => console.log('Aplicar filtros')}>
+                        onPress={aplicarFiltros}>
                         Aplicar
                     </Button>
                     <Button
