@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Nextflix.Data;
 using Nextflix.Models;
-using NextFlix.Models;
+using Nextflix.Models.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +21,13 @@ namespace Nextflix.Controllers
             _context = context;
         }
 
-        // GET: api/Comments/all
-        [HttpGet("all")]
-        public async Task<ActionResult<IEnumerable<Comment>>> GetAllComments()
+        // GET: api/Comments
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Comment>>> GetComments()
         {
             return await _context.Comments.ToListAsync();
         }
+
         // GET: api/Comments/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Comment>> GetComment(Guid id)
@@ -41,14 +42,27 @@ namespace Nextflix.Controllers
             return comment;
         }
 
-        // PUT: api/Comments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PUT: api/Comments/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutComment(Guid id, Comment comment)
         {
             if (id != comment.CommentId)
             {
                 return BadRequest();
+            }
+
+            // Verifica se o filme existe
+            var movieExists = await _context.Movies.AnyAsync(m => m.MovieId == comment.MovieId);
+            if (!movieExists)
+            {
+                return BadRequest("Movie not found.");
+            }
+
+            // Verifica se o usuário existe
+            var userExists = await _context.Users.AnyAsync(u => u.UserId == comment.UserId);
+            if (!userExists)
+            {
+                return BadRequest("User not found.");
             }
 
             _context.Entry(comment).State = EntityState.Modified;
@@ -73,17 +87,47 @@ namespace Nextflix.Controllers
         }
 
         // POST: api/Comments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Comment>> PostComment(Comment comment)
+        public async Task<ActionResult<Comment>> PostComment([FromBody] CreateCommentDto commentDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Verifica se o filme existe
+            var movieExists = await _context.Movies.AnyAsync(m => m.MovieId == commentDto.MovieId);
+            if (!movieExists)
+            {
+                return BadRequest("Movie not found.");
+            }
+
+            // Verifica se o usuário existe, somente se UserId foi informado
+            if (commentDto.UserId != null)
+            {
+                var userExists = await _context.Users.AnyAsync(u => u.UserId == commentDto.UserId);
+                if (!userExists)
+                {
+                    return BadRequest("User not found.");
+                }
+            }
+            // Cria o objeto Comment a partir do DTO
+            var comment = new Comment
+            {
+                CommentId = Guid.NewGuid(),
+                MovieId = commentDto.MovieId,
+                UserId = commentDto.UserId,
+                Text = commentDto.Text,
+                DateCreated = DateTime.UtcNow
+            };
+
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetComment", new { id = comment.CommentId }, comment);
         }
 
-        // DELETE: api/Comments/5
+        // DELETE: api/Comments/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteComment(Guid id)
         {
@@ -103,7 +147,7 @@ namespace Nextflix.Controllers
         {
             return _context.Comments.Any(e => e.CommentId == id);
         }
-        
+
         // GET: api/Comments/movie/{movieId}
         [HttpGet("movie/{movieId}")]
         public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsByMovie(Guid movieId)

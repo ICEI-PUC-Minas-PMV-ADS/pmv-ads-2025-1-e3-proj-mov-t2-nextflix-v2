@@ -53,8 +53,6 @@ namespace Nextflix
 
       app.UseAuthorization();
 
-      app.UseDeveloperExceptionPage();
-
       app.MapControllers();
 
       app.Run();

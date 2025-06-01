@@ -22,7 +22,7 @@ namespace Nextflix.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NextFlix.Models.Comment", b =>
+            modelBuilder.Entity("Nextflix.Models.Comment", b =>
                 {
                     b.Property<Guid>("CommentId")
                         .ValueGeneratedOnAdd()
@@ -31,14 +31,15 @@ namespace Nextflix.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("MovieId")
+                    b.Property<Guid?>("MovieId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("CommentId");
@@ -50,82 +51,38 @@ namespace Nextflix.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("Nextflix.Models.CustomFilmsList", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("UserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId1");
-
-                    b.ToTable("CustomFilmList");
-                });
-
             modelBuilder.Entity("Nextflix.Models.Movie", b =>
                 {
                     b.Property<Guid>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Cast")
-                        .IsRequired()
+                    b.Property<string>("Capa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Classification")
+                    b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("CustomFilmsListId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Duration")
+                    b.Property<string>("Sinopse")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Synopsis")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("MovieId");
 
-                    b.HasIndex("CustomFilmsListId");
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("Nextflix.Models.User", b =>
                 {
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -167,42 +124,23 @@ namespace Nextflix.Migrations
                     b.ToTable("UserUser");
                 });
 
-            modelBuilder.Entity("NextFlix.Models.Comment", b =>
+            modelBuilder.Entity("Nextflix.Models.Comment", b =>
                 {
                     b.HasOne("Nextflix.Models.Movie", "Movie")
-                        .WithMany("Comments")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Comentarios")
+                        .HasForeignKey("MovieId");
 
                     b.HasOne("Nextflix.Models.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Comentarios")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Movie");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Nextflix.Models.CustomFilmsList", b =>
-                {
-                    b.HasOne("Nextflix.Models.User", "User")
-                        .WithMany("FilmLists")
-                        .HasForeignKey("UserId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Nextflix.Models.Movie", b =>
                 {
-                    b.HasOne("Nextflix.Models.CustomFilmsList", null)
-                        .WithMany("Movies")
-                        .HasForeignKey("CustomFilmsListId");
-
                     b.HasOne("Nextflix.Models.User", null)
                         .WithMany("Movies")
                         .HasForeignKey("UserId");
@@ -223,21 +161,14 @@ namespace Nextflix.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Nextflix.Models.CustomFilmsList", b =>
-                {
-                    b.Navigation("Movies");
-                });
-
             modelBuilder.Entity("Nextflix.Models.Movie", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("Comentarios");
                 });
 
             modelBuilder.Entity("Nextflix.Models.User", b =>
                 {
-                    b.Navigation("Comments");
-
-                    b.Navigation("FilmLists");
+                    b.Navigation("Comentarios");
 
                     b.Navigation("Movies");
                 });

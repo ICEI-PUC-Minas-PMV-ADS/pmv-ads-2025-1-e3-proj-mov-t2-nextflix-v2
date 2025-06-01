@@ -1,12 +1,14 @@
 using System.ComponentModel.DataAnnotations;
-using NextFlix.Models;
+using Nextflix.Models;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Nextflix.Models
 {
   public class User
   {
-    public Guid? UserId { get; set; }
+    [Key]
+    public Guid UserId { get; set; }
     public string? Name { get; set; }
     public string? Email { get; set; }
     public string? Password { get; set; }
@@ -21,8 +23,7 @@ namespace Nextflix.Models
     [JsonIgnore]
     public List<Movie>? Movies { get; set; } = new();
     [JsonIgnore]
-    public List<CustomFilmsList>? FilmLists { get; set; } = new();
-    [JsonIgnore]
-    public List<Comment>? Comments { get; set; } = new();
-  }
+    public ICollection<Comment> Comentarios { get; set; } = new List<Comment>();
+
+    }
 }
