@@ -31,6 +31,13 @@ const UserDetails = () => {
       >
         <Text style={styles.buttonText}>Editar Cadastro</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: '#1B1F3B' }]}
+        onPress={() => navigation.navigate('UserCreate')}
+        >
+          <Text style={styles.buttonText}>Minhas Listas de Filmes</Text>
+        </TouchableOpacity>
     </ScrollView>
   );
 };
