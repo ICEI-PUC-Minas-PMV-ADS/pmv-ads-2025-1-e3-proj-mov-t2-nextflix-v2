@@ -1,8 +1,6 @@
 import React from 'react';
-import User2 from './screens/User2';
+import ResetSenha from './screens/ResetSenha'; // ajuste o caminho conforme necessário
 
-const App = () => {
-  return <User2 />;
-};
-
-export default App;
+export default function App() {
+  return <ResetSenha />;
+}
