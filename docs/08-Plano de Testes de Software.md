@@ -43,7 +43,7 @@ Aluno: Eduardo Coutinho da Silva Junior
 ### Critérios de Êxito
 
 1. **Dados visíveis do usuário.**
-2. **AOs novos dados inseridos são salvos no banco de dados.**
+2. **Os novos dados inseridos são salvos no banco de dados.**
 
 Aluno: Artur Maciel de Assis Pinto
 
