@@ -45,7 +45,7 @@ Aluno: Eduardo Coutinho da Silva Junior
 1. **Dados visíveis do usuário.**
 2. **AOs novos dados inseridos são salvos no banco de dados.**
 
-Aluno: artur Maciel de Assis Pinto
+Aluno: Artur Maciel de Assis Pinto
 
 
 
