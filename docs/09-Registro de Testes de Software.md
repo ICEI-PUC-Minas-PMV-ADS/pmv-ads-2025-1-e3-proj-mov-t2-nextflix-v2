@@ -86,6 +86,8 @@ Garantir que a tela esteja pronta para integração com o backend e ofereça uma
 - Validação visual ao clicar em “Entrar” sem preencher os campos
 - Navegação entre páginas funcionando
 
+ https://github.com/user-attachments/assets/b157a04b-3b08-437c-90ca-2e6e67519cc0
+
 **Resultado:**  
 **Aprovado** – A tela renderiza corretamente e está funcional (frontend)
 
