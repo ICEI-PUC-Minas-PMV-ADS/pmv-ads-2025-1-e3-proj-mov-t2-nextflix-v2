@@ -1,8 +1,6 @@
 import React from 'react';
-import User2 from './screens/User2';
+import Home from './screens/Home'; // ajuste o caminho conforme a localização do App.js
 
-const App = () => {
-  return <User2 />;
-};
-
-export default App;
+export default function App() {
+  return <Home />;
+}
