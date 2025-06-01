@@ -24,3 +24,28 @@
 5. **O tempo de resposta para exibir os filmes pesquisados é rápido.**
 
 Aluno: Eduardo Coutinho da Silva Junior
+
+## Caso de Teste 2: User – Páginas de perfil e cadastro de usuário.
+
+| **Requisito Referente**  | CT - 02 - Criar e editar perfil                                          |
+|--------------------------|----------------------------------------------------------------------|
+| **Descrição**             | Verificar se o usuário consegue entrar na sua página de perfil e criar/editar perfil. |
+| **Objetivo do Teste**     | Assegurar criação e edição de perfil de usuário. |
+
+### Passos
+
+1. **Abrir o aplicativo e ir para a página de perfil.**
+2. **Verificar se é mostrado os dados de usuário.**
+3. **Clicar em editar cadastro**
+4. **Clicar em editar perfil para habilitar edição.**
+5. **Alterar os dados e verificar se foi salvo.**
+
+### Critérios de Êxito
+
+1. **Dados visíveis do usuário.**
+2. **AOs novos dados inseridos são salvos no banco de dados.**
+
+Aluno: artur Maciel de Assis Pinto
+
+
+
