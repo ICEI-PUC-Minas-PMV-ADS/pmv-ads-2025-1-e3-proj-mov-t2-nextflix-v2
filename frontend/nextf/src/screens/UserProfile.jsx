@@ -9,7 +9,6 @@ const UserDetails = () => {
   const user = {
     name: 'Usuário 1',
     email: 'user@user.com',
-    phone: '(00) 12345-6789',
     bio: 'O Senhor dos Anéis é o melhor filme do mundo',
   };
 
@@ -23,9 +22,6 @@ const UserDetails = () => {
       <Text style={styles.label}>Email</Text>
       <Text style={styles.value}>{user.email}</Text>
 
-      <Text style={styles.label}>Telefone</Text>
-      <Text style={styles.value}>{user.phone}</Text>
-
       <Text style={styles.label}>Bio</Text>
       <Text style={styles.value}>{user.bio}</Text>
 
@@ -35,6 +31,13 @@ const UserDetails = () => {
       >
         <Text style={styles.buttonText}>Editar Cadastro</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: '#1B1F3B' }]}
+        onPress={() => navigation.navigate('UserCreate')}
+        >
+          <Text style={styles.buttonText}>Minhas Listas de Filmes</Text>
+        </TouchableOpacity>
     </ScrollView>
   );
 };
