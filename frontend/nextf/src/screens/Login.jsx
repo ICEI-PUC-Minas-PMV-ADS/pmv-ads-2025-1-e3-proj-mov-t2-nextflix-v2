@@ -14,6 +14,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [loading, setLoading] = useState(false);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const handleLogin = async () => {
     if (!email || !senha) {
@@ -25,7 +26,6 @@ export default function Login() {
     try {
       // Simulação de login (substitua por API real depois)
       await new Promise(resolve => setTimeout(resolve, 1500));
-
       Alert.alert('Sucesso', '✅ Login simulado com sucesso!');
     } catch (error) {
       Alert.alert('Erro', error.message);
@@ -36,54 +36,92 @@ export default function Login() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Entrar no NextFlix</Text>
+      <View style={styles.box}>
+        <Text style={styles.title}>Entrar no NextFlix</Text>
 
-      <Text style={styles.label}>E-mail</Text>
-      <TextInput
-        placeholder="Digite seu e-mail"
-        style={styles.input}
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
+        <Text style={styles.label}>E-mail</Text>
+        <TextInput
+          placeholder="Digite seu e-mail"
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+          textContentType="emailAddress"
+        />
 
-      <Text style={styles.label}>Senha</Text>
-      <TextInput
-        placeholder="Digite sua senha"
-        secureTextEntry
-        style={styles.input}
-        value={senha}
-        onChangeText={setSenha}
-      />
-
-      {loading ? (
-        <ActivityIndicator size="large" color="#E50914" />
-      ) : (
-        <>
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-            <Text style={styles.buttonText}>Entrar</Text>
+        <Text style={styles.label}>Senha</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            placeholder="Digite sua senha"
+            secureTextEntry={!mostrarSenha}
+            style={[styles.input, { flex: 1 }]}
+            value={senha}
+            onChangeText={setSenha}
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="password"
+          />
+          <TouchableOpacity
+            onPress={() => setMostrarSenha(!mostrarSenha)}
+            style={styles.toggleButton}
+          >
+            <Text style={{ color: '#1B1F3B', fontWeight: '600' }}>
+              {mostrarSenha ? 'Ocultar' : 'Mostrar'}
+            </Text>
           </TouchableOpacity>
+        </View>
 
-          <TouchableOpacity onPress={() => Alert.alert('Cadastro', 'Simulação de redirecionamento para cadastro.')}>
-            <Text style={styles.link}>Não tem conta? Cadastre-se</Text>
-          </TouchableOpacity>
+        {loading ? (
+          <ActivityIndicator size="large" color="#E50914" />
+        ) : (
+          <>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>Entrar</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => Alert.alert('Recuperação', 'Simulação de redirecionamento para reset de senha.')}>
-            <Text style={styles.link}>Esqueceu a senha?</Text>
-          </TouchableOpacity>
-        </>
-      )}
+            <TouchableOpacity
+              onPress={() =>
+                Alert.alert('Cadastro', 'Simulação de redirecionamento para cadastro.')
+              }
+            >
+              <Text style={styles.link}>Não tem conta? Cadastre-se</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() =>
+                Alert.alert('Recuperação', 'Simulação de redirecionamento para reset de senha.')
+              }
+            >
+              <Text style={styles.link}>Esqueceu a senha?</Text>
+            </TouchableOpacity>
+          </>
+        )}
+      </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#021B79',
     flexGrow: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  box: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 5,
   },
   title: {
     fontSize: 24,
@@ -106,6 +144,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     color: '#000',
   },
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  toggleButton: {
+    marginLeft: 10,
+  },
   button: {
     marginTop: 20,
     paddingVertical: 12,
@@ -125,3 +170,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+

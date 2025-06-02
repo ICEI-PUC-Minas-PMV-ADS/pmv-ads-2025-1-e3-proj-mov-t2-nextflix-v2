@@ -23,35 +23,54 @@ export default function ResetSenha() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Redefinir Senha</Text>
-      <Text style={styles.subtitle}>Insira seu e-mail para receber o link de redefinição:</Text>
+      <View style={styles.box}>
+        <Text style={styles.title}>Redefinir Senha</Text>
+        <Text style={styles.subtitle}>
+          Insira seu e-mail para receber o link de redefinição:
+        </Text>
 
-      <TextInput
-        placeholder="Digite seu e-mail"
-        style={styles.input}
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
+        <TextInput
+          placeholder="Digite seu e-mail"
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
 
-      <TouchableOpacity style={styles.button} onPress={handleReset}>
-        <Text style={styles.buttonText}>Enviar</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleReset}>
+          <Text style={styles.buttonText}>Enviar</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => Alert.alert('Ação simulada', 'Voltar ao login (simulado)')}>
-        <Text style={styles.link}>← Voltar ao login</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => Alert.alert('Ação simulada', 'Voltar ao login (simulado)')}
+        >
+          <Text style={styles.link}>← Voltar ao login</Text>
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#021B79',
     flexGrow: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  box: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 5,
   },
   title: {
     fontSize: 24,
@@ -62,8 +81,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    color: '#333',
-    marginBottom: 16,
+    color: '#4A4A4A', // cinza escuro
+    marginBottom: 20,
     textAlign: 'center',
   },
   input: {
@@ -76,7 +95,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#E50914',
+    backgroundColor: '#E50914', // vermelho
     paddingVertical: 12,
     borderRadius: 25,
     alignItems: 'center',
@@ -93,3 +112,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
