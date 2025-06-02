@@ -10,7 +10,7 @@ A tabela a seguir apresenta as funcionalidades criadas, com seus artefatos, e os
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
 |RF-001| A aplicação deve permitir que o usuário se cadastre.  | UserCreate.jsx UserProfile.jsx User.cs UserController.cs | Artur |
-|RF-002| A aplicação deve permitir que o usuário faça o login em seu perfil. 
+|RF-002| A aplicação deve permitir que o usuário faça o login em seu perfil. | Login.jsx, ResetSenha.jsx | Hana |
 |RF-003| O perfil do usuário deve conter as avaliações e comentários feitos por ele. 
 |RF-004| A aplicação deve permitir que o usuário busque títulos por nome, gênero e/ou avaliação. 
 |RF-005| A aplicação deve permitir que o usuário veja reviews e a avaliação dos títulos dadas pelos outros usuários.
