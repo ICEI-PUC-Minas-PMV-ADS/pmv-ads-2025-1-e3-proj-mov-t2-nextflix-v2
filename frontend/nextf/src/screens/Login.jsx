@@ -26,7 +26,6 @@ export default function Login() {
     try {
       // Simulação de login (substitua por API real depois)
       await new Promise(resolve => setTimeout(resolve, 1500));
-
       Alert.alert('Sucesso', '✅ Login simulado com sucesso!');
     } catch (error) {
       Alert.alert('Erro', error.message);
@@ -48,6 +47,8 @@ export default function Login() {
           onChangeText={setEmail}
           keyboardType="email-address"
           autoCapitalize="none"
+          autoCorrect={false}
+          textContentType="emailAddress"
         />
 
         <Text style={styles.label}>Senha</Text>
@@ -58,6 +59,9 @@ export default function Login() {
             style={[styles.input, { flex: 1 }]}
             value={senha}
             onChangeText={setSenha}
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="password"
           />
           <TouchableOpacity
             onPress={() => setMostrarSenha(!mostrarSenha)}
@@ -101,7 +105,7 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#021B79', // azul da paleta
+    backgroundColor: '#021B79',
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -152,7 +156,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 25,
     alignItems: 'center',
-    backgroundColor: '#E50914', // vermelho
+    backgroundColor: '#E50914',
   },
   buttonText: {
     color: '#FFFFFF',
@@ -166,3 +170,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
+
