@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ScrollView, Platform, KeyboardAvoidingView, } from 'react-native';
 import {
     Modal,
     Portal,
     Text,
     TextInput,
     Button,
-    Provider as PaperProvider,
-    RadioButton,
     List,
-    ScrollView,
-    KeyboardAvoidingView,
-    Platform,
 } from 'react-native-paper';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment';
+
+console.log('DEBUG:', Modal);
+console.log('DEBUG:', KeyboardAvoidingView);
+
 
 const Filtro = () => {
     const [visible, setVisible] = useState(false);
@@ -46,7 +46,7 @@ const Filtro = () => {
 
         console.log('Filtros a enviar:', filtros);
 
-        fetch(' backEnd aqui - como vou fazer isso sem mexer no backEnd?', {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -92,8 +92,8 @@ const Filtro = () => {
                                       ))}
                                     </View>
 
-                    {/* Avalia��o m�nima */}
-                    <List.Section title="Avalia��o m�nima" style={styles.sectionTitle}>
+                    {/* Avaliação mínima */}
+                    <List.Section title="Avaliação mínima" style={styles.sectionTitle}>
                         <List.Accordion title="Escolha">
                             {[1, 2, 3, 4, 5].map((n) => (
                                 <Button key={n} mode="contained" style={styles.button} onPress={() => setAvaliacao(String(n))}>
@@ -103,8 +103,8 @@ const Filtro = () => {
                         </List.Accordion>
                     </List.Section>
 
-                    {/* Data de lan�amento */}
-                    <Text style={styles.sectionTitle}>Ano de Lan�amento:</Text>
+                    {/* Data de lançamento */}
+                    <Text style={styles.sectionTitle}>Ano de Lançamento:</Text>
 
                     <TouchableOpacity
                         onPress={() => {
@@ -128,7 +128,7 @@ const Filtro = () => {
                         }}
                     >
                         <TextInput
-                            label="At�"
+                            label="Até"
                             value={formatDate(date2)}
                             left={<TextInput.Icon icon="calendar" />}
                             editable={false}
@@ -150,8 +150,8 @@ const Filtro = () => {
                         />
                     )}
 
-                    {/* Dura��o */}
-                    <List.Section title="Dura��o" style={styles.sectionTitle}>
+                    {/* Duração */}
+                    <List.Section title="Duração" style={styles.sectionTitle}>
                         <List.Accordion>
                             <Button mode="contained" style={styles.button} onPress={() => setDuracao('1')}>
                                 Menos que 1 hora
@@ -172,16 +172,16 @@ const Filtro = () => {
                     <List.Section title="Ordenar por:" style={styles.sectionTitle}>
                         <List.Accordion>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('relevancia')}>
-                                Relev�ncia
+                                Relevância
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('avaliacoes')}>
-                                Avalia��es
+                                Avaliações
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('data')}>
-                                Data de lan�amento
+                                Data de lançamento
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('duracao')}>
-                                Dura��o
+                                Duração
                             </Button>
                         </List.Accordion>
                     </List.Section>
@@ -199,7 +199,14 @@ const Filtro = () => {
                         mode="contained"
                         style={[styles.button, { backgroundColor: '#E50914', borderColor: '#E50914' }]}
                         rippleColor="#E50914"
-                        onPress={() => console.log('Limpar filtros')}>
+                        onPress={() => {
+                            setGenero('acao');
+                            setAvaliacao('');
+                            setDate(new Date());
+                            setDate2(new Date());
+                            setDuracao('');
+                            setOrdem('');}}>
+
                         Limpar
                     </Button>
                     <Button style={styles.button} onPress={() => setVisible(false)}>Fechar</Button>
@@ -232,7 +239,7 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 18,
-        fontWeight: 500,
+        fontWeight: '500',
         marginBottom: 8,
     },
     input: {
@@ -244,7 +251,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderColor: '#1B1F3B',
         padding: 7,
-        background: 'white',
+        backgroundColor: 'white',
         marginVertical: 5,
     },
 });
