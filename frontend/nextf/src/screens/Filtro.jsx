@@ -9,20 +9,11 @@ import {
     Provider as PaperProvider,
     RadioButton,
     List,
+    ScrollView,
+    KeyboardAvoidingView,
+    Platform,
 } from 'react-native-paper';
 import DateTimePicker from '@react-native-community/datetimepicker';
-
-{ /* render no expo apenas
-
-export default function App() {
-  return (
-    <PaperProvider>
-      <Filtro />
-    </PaperProvider>
-  );
-}
-
-   */  }
 
 const Filtro = () => {
     const [visible, setVisible] = useState(false);
@@ -41,7 +32,7 @@ const Filtro = () => {
         return date.toLocaleDateString('pt-BR');
     };
 
-    {/* criando JSON oara mandar para o BackEnd */ }
+    // criando JSON oara mandar para o BackEnd
 
     const aplicarFiltros = async () => {
         const filtros = {
@@ -79,16 +70,30 @@ const Filtro = () => {
                     visible={visible}
                     onDismiss={() => setVisible(false)}
                     contentContainerStyle={styles.modal}>
-                    {/* Gênero */}
-                    <Text style={styles.sectionTitle}>Gênero:</Text>
-                    <RadioButton.Group onValueChange={setGenero} value={genero}>
-                        <RadioButton.Item label="Ação" value="acao" />
-                        <RadioButton.Item label="Comédia" value="comedia" />
-                        <RadioButton.Item label="Drama" value="drama" />
-                    </RadioButton.Group>
+                    <KeyboardAvoidingView>
+                          <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
 
-                    {/* Avaliação mínima */}
-                    <List.Section title="Avaliação mínima" style={styles.sectionTitle}>
+                    {/* Gï¿½nero */}
+                     <Text style={styles.sectionTitle}>GÃªnero:</Text>
+                                    <View style={styles.row}>
+                                      {['acao', 'comedia', 'drama'].map((tipo) => (
+                                        <TouchableOpacity
+                                          key={tipo}
+                                          style={[
+                                            styles.generoButton,
+                                            genero === tipo && styles.generoButtonSelected,
+                                          ]}
+                                          onPress={() => setGenero(tipo)}
+                                        >
+                                          <Text style={{ color: genero === tipo ? '#fff' : '#1B1F3B' }}>
+                                            {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+                                          </Text>
+                                        </TouchableOpacity>
+                                      ))}
+                                    </View>
+
+                    {/* Avaliaï¿½ï¿½o mï¿½nima */}
+                    <List.Section title="Avaliaï¿½ï¿½o mï¿½nima" style={styles.sectionTitle}>
                         <List.Accordion title="Escolha">
                             {[1, 2, 3, 4, 5].map((n) => (
                                 <Button key={n} mode="contained" style={styles.button} onPress={() => setAvaliacao(String(n))}>
@@ -98,8 +103,8 @@ const Filtro = () => {
                         </List.Accordion>
                     </List.Section>
 
-                    {/* Data de lançamento */}
-                    <Text style={styles.sectionTitle}>Ano de Lançamento:</Text>
+                    {/* Data de lanï¿½amento */}
+                    <Text style={styles.sectionTitle}>Ano de Lanï¿½amento:</Text>
 
                     <TouchableOpacity
                         onPress={() => {
@@ -123,7 +128,7 @@ const Filtro = () => {
                         }}
                     >
                         <TextInput
-                            label="Até"
+                            label="Atï¿½"
                             value={formatDate(date2)}
                             left={<TextInput.Icon icon="calendar" />}
                             editable={false}
@@ -145,8 +150,8 @@ const Filtro = () => {
                         />
                     )}
 
-                    {/* Duração */}
-                    <List.Section title="Duração" style={styles.sectionTitle}>
+                    {/* Duraï¿½ï¿½o */}
+                    <List.Section title="Duraï¿½ï¿½o" style={styles.sectionTitle}>
                         <List.Accordion>
                             <Button mode="contained" style={styles.button} onPress={() => setDuracao('1')}>
                                 Menos que 1 hora
@@ -167,21 +172,21 @@ const Filtro = () => {
                     <List.Section title="Ordenar por:" style={styles.sectionTitle}>
                         <List.Accordion>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('relevancia')}>
-                                Relevância
+                                Relevï¿½ncia
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('avaliacoes')}>
-                                Avaliações
+                                Avaliaï¿½ï¿½es
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('data')}>
-                                Data de lançamento
+                                Data de lanï¿½amento
                             </Button>
                             <Button mode="contained" style={styles.button} onPress={() => setOrdem('duracao')}>
-                                Duração
+                                Duraï¿½ï¿½o
                             </Button>
                         </List.Accordion>
                     </List.Section>
 
-                    {/* Botões finais */}
+                    {/* Botï¿½es finais */}
                     <Button
                         icon="check"
                         mode="contained"
@@ -192,12 +197,14 @@ const Filtro = () => {
                     <Button
                         icon="star"
                         mode="contained"
-                        style={styles.button, color = '#E50914', borderColor = '#E50914'}
+                        style={[styles.button, { backgroundColor: '#E50914', borderColor: '#E50914' }]}
                         rippleColor="#E50914"
                         onPress={() => console.log('Limpar filtros')}>
                         Limpar
                     </Button>
                     <Button style={styles.button} onPress={() => setVisible(false)}>Fechar</Button>
+                    </ScrollView>
+                    </KeyboardAvoidingView>
                 </Modal>
             </Portal>
 
@@ -242,4 +249,4 @@ const styles = StyleSheet.create({
     },
 });
 
-        export default Filtro();
+        export default Filtro;
