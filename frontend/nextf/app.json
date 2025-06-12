@@ -1,4 +1,7 @@
 {
   "name": "nextf",
-  "displayName": "nextf"
+  "displayName": "nextf",
+  "plugins": [
+    "expo-font"
+  ]
 }
