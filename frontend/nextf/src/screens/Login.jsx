@@ -10,7 +10,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [loading, setLoading] = useState(false);
@@ -24,9 +24,10 @@ export default function Login() {
 
     setLoading(true);
     try {
-      // Simulação de login (substitua por API real depois)
       await new Promise(resolve => setTimeout(resolve, 1500));
-      Alert.alert('Sucesso', '✅ Login simulado com sucesso!');
+      Alert.alert('Sucesso', '✅ Login realizado com sucesso!');
+      // Após o login, você pode navegar para a tela principal (Home)
+      navigation.navigate('Home');
     } catch (error) {
       Alert.alert('Erro', error.message);
     } finally {
@@ -83,16 +84,15 @@ export default function Login() {
 
             <TouchableOpacity
               onPress={() =>
-                Alert.alert('Cadastro', 'Simulação de redirecionamento para cadastro.')
+                Alert.alert('Ainda não implementado', 'A tela de cadastro virá aqui.')
               }
             >
               <Text style={styles.link}>Não tem conta? Cadastre-se</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() =>
-                Alert.alert('Recuperação', 'Simulação de redirecionamento para reset de senha.')
-              }
+              // Navega para a tela 'ResetSenha'
+              onPress={() => navigation.navigate('ResetSenha')}
             >
               <Text style={styles.link}>Esqueceu a senha?</Text>
             </TouchableOpacity>
@@ -102,6 +102,7 @@ export default function Login() {
     </ScrollView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -170,4 +171,3 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
-
