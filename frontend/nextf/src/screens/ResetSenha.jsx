@@ -9,7 +9,8 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function ResetSenha() {
+// A tela agora recebe a prop "navigation" automaticamente
+export default function ResetSenha({ navigation }) {
   const [email, setEmail] = useState('');
 
   const handleReset = () => {
@@ -19,6 +20,7 @@ export default function ResetSenha() {
     }
 
     Alert.alert('Sucesso', '🔒 Link de redefinição enviado para o e-mail (simulado).');
+    navigation.goBack();
   };
 
   return (
@@ -43,7 +45,8 @@ export default function ResetSenha() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => Alert.alert('Ação simulada', 'Voltar ao login (simulado)')}
+          // MUDANÇA AQUI: Usa a função goBack() para voltar à tela anterior
+          onPress={() => navigation.goBack()}
         >
           <Text style={styles.link}>← Voltar ao login</Text>
         </TouchableOpacity>
@@ -81,7 +84,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    color: '#4A4A4A', // cinza escuro
+    color: '#4A4A4A',
     marginBottom: 20,
     textAlign: 'center',
   },
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#E50914', // vermelho
+    backgroundColor: '#E50914',
     paddingVertical: 12,
     borderRadius: 25,
     alignItems: 'center',
@@ -112,4 +115,3 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
-
