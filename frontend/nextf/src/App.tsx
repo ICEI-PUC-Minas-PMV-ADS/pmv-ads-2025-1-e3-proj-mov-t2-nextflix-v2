@@ -15,15 +15,33 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
 
-    console.log('Filtro é:', Filtro);
+  //console.log('Filtro é:', Filtro);
 
   return (
-    <SafeAreaProvider
-    settings={{
-    icon: (props) => <Icon {...props} />,
-    }}>
-       <PaperProvider>
-         <Filtro />
+    <SafeAreaProvider>
+       <PaperProvider
+        settings={{
+           icon: (props) => <Icon {...props} />,
+           }}>
+           <NavigationContainer>
+               <Stack.Navigator initialRouteName="UserProfile">
+                  <Stack.Screen
+                     name="UserProfile"
+                     component={UserProfile}
+                     options={{ title: 'Detalhes do Usuário' }}
+                    />
+                  <Stack.Screen
+                     name="UserCreate"
+                     component={UserCreate}
+                     options={{ title: 'Criar Usuário' }}
+                   />
+                  <Stack.Screen
+                     name="Filtro"
+                     component={Filtro}
+                     options={{ title: 'Filtrar Filmes' }}
+                   />
+               </Stack.Navigator>
+           </NavigationContainer>
        </PaperProvider>
      </SafeAreaProvider>
   );

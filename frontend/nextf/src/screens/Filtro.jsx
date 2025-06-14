@@ -7,6 +7,7 @@ import {
     TextInput,
     Button,
     List,
+    IconButton,
 } from 'react-native-paper';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
@@ -74,7 +75,9 @@ const Filtro = () => {
                     onDismiss={() => setVisible(false)}
                     contentContainerStyle={styles.modal}>
                     <KeyboardAvoidingView>
-                          <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
+                          <ScrollView
+                          contentContainerStyle={{ paddingBottom: 20 }}
+                           keyboardShouldPersistTaps="handled">
 
                     {/* G�nero */}
                      <Text style={styles.sectionTitle}>  Gênero:</Text>
@@ -86,7 +89,7 @@ const Filtro = () => {
                                             styles.generoButton,
                                             genero === tipo && styles.generoButtonSelected,
                                           ]}
-                                          onPress={() => setGenero(tipo)}
+                                          onPress={() => {setGenero(tipo); console.log(tipo);}}
                                         >
                                           <Text style={{ color: genero === tipo ? '#fff' : '#1B1F3B' }}>
                                             {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
@@ -103,7 +106,7 @@ const Filtro = () => {
                         expanded={avaOpen}
                         onPress={() => setAvaOpen(!avaOpen)}>
                             {[1, 2, 3, 4, 5].map((n) => (
-                                <Button key={n} mode="contained" style={styles.button} labelStyle={styles.text} onPress={() => {setAvaliacao(String(n)); setAvaOpen(false);}}>
+                                <Button key={n} mode="contained" style={styles.button} labelStyle={styles.text} onPress={() => {setAvaliacao(String(n)); setAvaOpen(false); console.log(String(n));}}>
                                     {n} ⭐
                                 </Button>
                             ))}
@@ -115,6 +118,7 @@ const Filtro = () => {
 
                     <TouchableOpacity
                         onPress={() => {
+                             console.log('Abrindo DatePicker para De');
                             setShowDatePicker(true);
                             setActiveDateField('from');
                         }}
@@ -122,7 +126,7 @@ const Filtro = () => {
                         <TextInput
                             label="De"
                             value={formatDate(date)}
-                            left={<TextInput.Icon icon="calendar-blank" />}
+                            left={<TextInput.Icon icon="calendar-blank" disabled={true} />}
                             editable={false}
                             style={styles.input}
                         />
@@ -130,6 +134,7 @@ const Filtro = () => {
 
                     <TouchableOpacity
                         onPress={() => {
+                             console.log('Abrindo DatePicker para Até');
                             setShowDatePicker(true);
                             setActiveDateField('to');
                         }}
@@ -137,7 +142,7 @@ const Filtro = () => {
                         <TextInput
                             label="Até"
                             value={formatDate(date2)}
-                            left={<TextInput.Icon icon="calendar" />}
+                            left={<TextInput.Icon icon="calendar" disabled={true}/>}
                             editable={false}
                             style={styles.input}
                         />
@@ -160,6 +165,7 @@ const Filtro = () => {
                     {/* Duração */}
                     <List.Section title="Duração" titleStyle={styles.sectionTitle}>
                         <List.Accordion
+                          style={styles.button}
                           title={duracao ? `${duracao} min` : 'Escolha'}
                           expanded={duracaoOpen}
                           onPress={() => setDuracaoOpen(!duracaoOpen)}>
@@ -170,6 +176,7 @@ const Filtro = () => {
                                   onPress={() => {
                                     setDuracao(n);
                                     setDuracaoOpen(false);
+                                    console.log(n);
                                   }}
                                   style={styles.button}
                                   labelStyle={styles.text}
@@ -194,6 +201,7 @@ const Filtro = () => {
                                   onPress={() => {
                                     setOrdem(opcao);
                                     setOrdenacaoOpen(false);
+                                    console.log(opcao);
                                   }}
                                   style={styles.button}
                                   labelStyle={styles.text}
@@ -234,9 +242,14 @@ const Filtro = () => {
                 </Modal>
             </Portal>
 
-            <Button mode="contained" rippleColor="#1B1F3B" style={styles.button} labelStyle={styles.text} onPress={() => setVisible(true)}>
-                Abrir Filtro
-            </Button>
+            <IconButton
+            mode="contained"
+            icon="filter-menu-outline"
+            iconColor="#1B1F3B"
+            rippleColor="#1B1F3B"
+            size={20}
+            onPress={() => setVisible(true)}/>
+
         </View>
     );
 };
