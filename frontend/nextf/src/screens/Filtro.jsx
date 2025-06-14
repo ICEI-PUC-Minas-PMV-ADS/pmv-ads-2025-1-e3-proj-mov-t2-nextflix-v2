@@ -60,7 +60,7 @@ const Filtro = () => {
             .then((res) => res.json())
             .then((dados) => {
                 console.log('Filmes recebidos do backend:', dados);
-
+                
             })
             .catch((erro) => {
                 console.error('Erro ao buscar filmes:', erro);
