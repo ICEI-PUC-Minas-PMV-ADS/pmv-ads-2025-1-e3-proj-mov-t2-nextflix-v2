@@ -10,13 +10,20 @@ import {
   Alert,
   SafeAreaView, // Importar SafeAreaView para melhor compatibilidade
 } from 'react-native';
+import { Provider as PaperProvider, IconButton } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+//import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from 'axios';
+
+import Filtro from './Filtro'
 
 const Home = ({ navigation }) => {
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [showFiltro, setShowFiltro] = useState(false);
 
   const categorias = ['Ação', 'Comédia', 'Drama'];
   const categoryIds = {
@@ -101,13 +108,23 @@ const Home = ({ navigation }) => {
 
       {/* Apenas o conteúdo abaixo do cabeçalho pode rolar */}
       <ScrollView>
-        <View style={styles.contentContainer}>
+        <View style={styles.searchRow}>
           <TextInput
-            style={styles.input}
+            style={styles.searchInput}
             placeholder="Buscar filmes..."
             value={searchQuery}
             onChangeText={setSearchQuery}
           />
+          <IconButton
+            mode="contained"
+            icon="filter-menu-outline"
+            iconColor="#1B1F3B"
+            rippleColor="#1B1F3B"
+            size={20}
+            onPress={() =>
+               setShowFiltro(true)}
+               style={styles.filterButton}/>
+        </View>
 
           <View style={styles.categories}>
             {categorias.map((cat) => (
@@ -138,8 +155,20 @@ const Home = ({ navigation }) => {
               </View>
             ))}
           </View>
-        </View>
       </ScrollView>
+      {showFiltro && (
+        <View style={styles.overlay}>
+          <SafeAreaProvider>
+            <PaperProvider
+              settings={{
+                  icon: (props) => <MaterialCommunityIcons {...props} />,
+                }}
+            >
+              <Filtro onClose={() => setShowFiltro(false)}/>
+            </PaperProvider>
+          </SafeAreaProvider>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -223,6 +252,33 @@ const styles = StyleSheet.create({
   movieTitle: {
     textAlign: 'center',
     fontWeight: 'bold',
+  },
+  searchRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+    padding: 16,
+  },
+  searchInput: {
+    flex: 1,
+    padding: 10,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 6,
+  },
+  filterButton: {
+    marginLeft: 8,
+    borderRadius: 10,
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#fff',
+    zIndex: 10,
+    padding: 16,
   },
 });
 

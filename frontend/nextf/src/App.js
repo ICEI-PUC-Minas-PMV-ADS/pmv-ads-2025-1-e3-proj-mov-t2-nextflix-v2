@@ -24,7 +24,7 @@ export default function App() {
         icon: (props) => <Icon {...props} />,
     }}> 
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
               name="Login"
               component={Login}
@@ -38,6 +38,11 @@ export default function App() {
             <Stack.Screen
               name="Home"
               component={Home}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Filtro"
+              component={Filtro}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

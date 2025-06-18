@@ -16,14 +16,12 @@ console.log('DEBUG:', Modal);
 console.log('DEBUG:', KeyboardAvoidingView);
 
 
-const Filtro = () => {
+const Filtro = ({onClose}) => {
     const [visible, setVisible] = useState(false);
     const [genero, setGenero] = useState('acao');
     const [avaliacao, setAvaliacao] = useState('');
     const [date, setDate] = useState(new Date());
     const [date2, setDate2] = useState(new Date());
-    const [showDate1, setShowDate1] = useState(false);
-    const [showDate2, setShowDate2] = useState(false);
     const [duracao, setDuracao] = useState('');
     const [ordem, setOrdem] = useState('');
     const [showDatePicker, setShowDatePicker] = useState(false);
@@ -218,7 +216,7 @@ const Filtro = () => {
                         mode="contained"
                         style={styles.button}
                         labelStyle={styles.text}
-                        onPress={() => {aplicarFiltros; setVisible(false);}}>
+                        onPress={() => {aplicarFiltros(); onClose();}}>
                         Aplicar
                     </Button>
                     <Button
@@ -236,7 +234,7 @@ const Filtro = () => {
 
                         Limpar
                     </Button>
-                    <Button style={styles.button} labelStyle={styles.text} onPress={() => setVisible(false)}>Fechar</Button>
+                    <Button style={styles.button} labelStyle={styles.text} onPress={() => onClose()}>Fechar</Button>
                     </ScrollView>
                     </KeyboardAvoidingView>
                 </Modal>

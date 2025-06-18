@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nextflix.Data;
 using Nextflix.Models;
+using Nextflix.DTOs;
 
 namespace Nextflix.Controllers
 {
@@ -104,5 +105,67 @@ namespace Nextflix.Controllers
         {
             return _context.Movies.Any(e => e.MovieId == MovieID);
         }
+
+        // POST: api/Films/filter
+        [HttpPost("filter")]
+        public async Task<ActionResult<IEnumerable<Movie>>> FilterFilms([FromBody] MovieFilterDTO filter)
+        {
+            var query = _context.Movies.AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter.Genero))
+                query = query.Where(f => f.Genre == filter.Genero);
+
+            if (!string.IsNullOrEmpty(filter.Avaliacao))
+                query = query.Where(f => f.Rating >= int.Parse(filter.Avaliacao));
+
+            if (filter.DataInicio != null)
+                query = query.Where(f => f.ReleaseDate >= filter.DataInicio);
+
+            if (filter.DataFim != null)
+                query = query.Where(f => f.ReleaseDate <= filter.DataFim);
+
+            if (!string.IsNullOrEmpty(filter.Duracao))
+            {
+                switch (filter.Duracao)
+                {
+                    case "1": // menos de 1h
+                        query = query.Where(f => int.Parse(f.Duration) < 90);
+                        break;
+                    case "2": // entre 1 e 2h
+                        query = query.Where(f => int.Parse(f.Duration) >= 90 && int.Parse(f.Duration) <= 120);
+                        break;
+                    case "3": // entre 2 e 3h
+                        query = query.Where(f => int.Parse(f.Duration) > 120 && int.Parse(f.Duration) <= 150);
+                        break;
+                    case "4": // mais de 3h
+                        query = query.Where(f => int.Parse(f.Duration) > 150 && int.Parse(f.Duration) <= 180);
+                        break;
+                    case "5": // mais de 3h
+                        query = query.Where(f => int.Parse(f.Duration) > 180);
+                        break;
+                }
+            }
+
+            // Ordenação
+            switch (filter.Ordem)
+            {
+                case "1": // Relevância (exemplo: por nome)
+                    query = query.OrderBy(f => f.Name);
+                    break;
+                case "2":
+                    query = query.OrderByDescending(f => f.Rating);
+                    break;
+                case "3":
+                    query = query.OrderByDescending(f => f.ReleaseDate);
+                    break;
+                case "4":
+                    query = query.OrderByDescending(f => int.Parse(f.Duration));
+                    break;
+            }
+
+            var result = await query.ToListAsync();
+            return Ok(result);
+        }
+
     }
 }

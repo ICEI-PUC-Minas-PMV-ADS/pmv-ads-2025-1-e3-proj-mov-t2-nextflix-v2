@@ -22,6 +22,8 @@ namespace Nextflix.Models
 
         public string Cast { get; set; } // Propriedade para armazenar o elenco do filme
 
+        public int Rating { get; set; } // Propriedade para armazenar o elenco do filme
+
         public DateTime ReleaseDate { get; set; } // Propriedade para armazenar a data de lançamento do filme
 
         public List<Comment> Comments { get; set; }
