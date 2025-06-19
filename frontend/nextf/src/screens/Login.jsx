@@ -1,34 +1,38 @@
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-  ActivityIndicator,
-  ScrollView,
+  View, Text, TextInput, TouchableOpacity, StyleSheet,
+  Alert, ActivityIndicator, ScrollView,
 } from 'react-native';
+import api from '../services/api'; // Importa a nossa configuração
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const handleLogin = async () => {
-    if (!email || !senha) {
+    if (!email || !password) {
       Alert.alert('Erro', 'Preencha o e-mail e a senha.');
       return;
     }
 
     setLoading(true);
     try {
-      // Simulação de login (substitua por API real depois)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      Alert.alert('Sucesso', '✅ Login simulado com sucesso!');
+      // ALTERAÇÃO CRÍTICA: Chamada real à API em vez da simulação.
+      const response = await api.post('/Users/login', {
+        email: email,
+        password: password,
+      });
+
+      Alert.alert('Sucesso', '✅ Login realizado com sucesso!');
+      navigation.navigate('Home');
+
     } catch (error) {
-      Alert.alert('Erro', error.message);
+      console.error(error.response?.data || error.message || error);
+      const errorMessage =
+        error.response?.data?.message || 'Erro ao tentar fazer login. Verifique seus dados ou a conexão com o servidor.';
+      Alert.alert('Erro no Login', errorMessage);
     } finally {
       setLoading(false);
     }
@@ -38,7 +42,6 @@ export default function Login() {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.box}>
         <Text style={styles.title}>Entrar no NextFlix</Text>
-
         <Text style={styles.label}>E-mail</Text>
         <TextInput
           placeholder="Digite seu e-mail"
@@ -47,21 +50,16 @@ export default function Login() {
           onChangeText={setEmail}
           keyboardType="email-address"
           autoCapitalize="none"
-          autoCorrect={false}
-          textContentType="emailAddress"
         />
-
         <Text style={styles.label}>Senha</Text>
         <View style={styles.passwordContainer}>
           <TextInput
             placeholder="Digite sua senha"
             secureTextEntry={!mostrarSenha}
             style={[styles.input, { flex: 1 }]}
-            value={senha}
-            onChangeText={setSenha}
+            value={password}
+            onChangeText={setPassword}
             autoCapitalize="none"
-            autoCorrect={false}
-            textContentType="password"
           />
           <TouchableOpacity
             onPress={() => setMostrarSenha(!mostrarSenha)}
@@ -72,7 +70,6 @@ export default function Login() {
             </Text>
           </TouchableOpacity>
         </View>
-
         {loading ? (
           <ActivityIndicator size="large" color="#E50914" />
         ) : (
@@ -80,20 +77,10 @@ export default function Login() {
             <TouchableOpacity style={styles.button} onPress={handleLogin}>
               <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() =>
-                Alert.alert('Cadastro', 'Simulação de redirecionamento para cadastro.')
-              }
-            >
+            <TouchableOpacity onPress={() => Alert.alert('Cadastro', 'Tela de cadastro do colega ainda não integrada.')}>
               <Text style={styles.link}>Não tem conta? Cadastre-se</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() =>
-                Alert.alert('Recuperação', 'Simulação de redirecionamento para reset de senha.')
-              }
-            >
+            <TouchableOpacity onPress={() => navigation.navigate('ResetSenha')}>
               <Text style={styles.link}>Esqueceu a senha?</Text>
             </TouchableOpacity>
           </>
@@ -102,6 +89,8 @@ export default function Login() {
     </ScrollView>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -170,4 +159,3 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
-
