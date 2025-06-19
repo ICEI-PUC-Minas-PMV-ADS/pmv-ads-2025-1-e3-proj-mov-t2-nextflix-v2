@@ -9,6 +9,7 @@ import {
 } from 'react-native-paper';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
+import FiltroStyles from '../styles/FiltroStyle';
 
 console.log('DEBUG:', KeyboardAvoidingView);
 
@@ -62,21 +63,21 @@ const Filtro = ({onClose, onApply}) => {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={FiltroStyles.container}>
                     <KeyboardAvoidingView>
                           <ScrollView
                           contentContainerStyle={{ paddingBottom: 20 }}
                            keyboardShouldPersistTaps="handled">
 
                     {/* G�nero */}
-                     <Text style={styles.sectionTitle}>  Gênero:</Text>
-                                    <View style={styles.row}>
+                     <Text style={FiltroStyles.sectionTitle}>  Gênero:</Text>
+                                    <View style={FiltroStyles.row}>
                                       {['acao', 'comedia', 'drama'].map((tipo) => (
                                         <TouchableOpacity
                                           key={tipo}
                                           style={[
-                                            styles.generoButton,
-                                            genero === tipo && styles.generoButtonSelected,
+                                            FiltroStyles.generoButton,
+                                            genero === tipo && FiltroStyles.generoButtonSelected,
                                           ]}
                                           onPress={() => {setGenero(tipo); console.log(tipo);}}
                                         >
@@ -88,14 +89,14 @@ const Filtro = ({onClose, onApply}) => {
                                     </View>
 
                     {/* Avaliação mínima */}
-                    <List.Section title="Avaliação mínima" titleStyle={styles.sectionTitle}>
+                    <List.Section title="Avaliação mínima" titleStyle={FiltroStyles.sectionTitle}>
                         <List.Accordion
                         title={avaliacao ? `${avaliacao} ⭐` : 'Escolha'}
-                        style={styles.button}
+                        style={FiltroStyles.button}
                         expanded={avaOpen}
                         onPress={() => setAvaOpen(!avaOpen)}>
                             {[1, 2, 3, 4, 5].map((n) => (
-                                <Button key={n} mode="contained" style={styles.button} labelStyle={styles.text} onPress={() => {setAvaliacao(String(n)); setAvaOpen(false); console.log(String(n));}}>
+                                <Button key={n} mode="contained" style={FiltroStyles.button} labelStyle={FiltroStyles.text} onPress={() => {setAvaliacao(String(n)); setAvaOpen(false); console.log(String(n));}}>
                                     {n} ⭐
                                 </Button>
                             ))}
@@ -103,7 +104,7 @@ const Filtro = ({onClose, onApply}) => {
                     </List.Section>
 
                     {/* Data de lançamento */}
-                    <Text style={styles.sectionTitle}> Ano de Lançamento:</Text>
+                    <Text style={FiltroStyles.sectionTitle}> Ano de Lançamento:</Text>
 
                     <TouchableOpacity
                         onPress={() => {
@@ -117,7 +118,7 @@ const Filtro = ({onClose, onApply}) => {
                             value={formatDate(date)}
                             left={<TextInput.Icon icon="calendar-blank" disabled={true} />}
                             editable={false}
-                            style={styles.input}
+                            style={FiltroStyles.input}
                         />
                     </TouchableOpacity>
 
@@ -133,7 +134,7 @@ const Filtro = ({onClose, onApply}) => {
                             value={formatDate(date2)}
                             left={<TextInput.Icon icon="calendar" disabled={true}/>}
                             editable={false}
-                            style={styles.input}
+                            style={FiltroStyles.input}
                         />
                     </TouchableOpacity>
 
@@ -152,9 +153,9 @@ const Filtro = ({onClose, onApply}) => {
                     )}
 
                     {/* Duração */}
-                    <List.Section title="Duração" titleStyle={styles.sectionTitle}>
+                    <List.Section title="Duração" titleStyle={FiltroStyles.sectionTitle}>
                         <List.Accordion
-                          style={styles.button}
+                          style={FiltroStyles.button}
                           title={duracao ? `${duracao} min` : 'Escolha'}
                           expanded={duracaoOpen}
                           onPress={() => setDuracaoOpen(!duracaoOpen)}>
@@ -167,8 +168,8 @@ const Filtro = ({onClose, onApply}) => {
                                     setDuracaoOpen(false);
                                     console.log(n);
                                   }}
-                                  style={styles.button}
-                                  labelStyle={styles.text}
+                                  style={FiltroStyles.button}
+                                  labelStyle={FiltroStyles.text}
                                 >
                                   {n} min
                                 </Button>
@@ -177,9 +178,9 @@ const Filtro = ({onClose, onApply}) => {
                     </List.Section>
 
                     {/* Ordenar por */}
-                    <List.Section title="Ordenar por:" titleStyle={styles.sectionTitle}>
+                    <List.Section title="Ordenar por:" titleStyle={FiltroStyles.sectionTitle}>
                         <List.Accordion
-                        style={styles.button}
+                        style={FiltroStyles.button}
                         title={ordem || 'Escolha'}
                         expanded={ordenacaoOpen}
                         onPress={() => setOrdenacaoOpen(!ordenacaoOpen)}>
@@ -192,8 +193,8 @@ const Filtro = ({onClose, onApply}) => {
                                     setOrdenacaoOpen(false);
                                     console.log(opcao);
                                   }}
-                                  style={styles.button}
-                                  labelStyle={styles.text}
+                                  style={FiltroStyles.button}
+                                  labelStyle={FiltroStyles.text}
                                 >
                                   {opcao}
                                 </Button>
@@ -205,8 +206,8 @@ const Filtro = ({onClose, onApply}) => {
                     <Button
                         icon="check"
                         mode="contained"
-                        style={styles.button}
-                        labelStyle={styles.text}
+                        style={FiltroStyles.button}
+                        labelStyle={FiltroStyles.text}
                         onPress={() => {
                             const ordemConvertida = {
                               'Nome': '1',
@@ -229,7 +230,7 @@ const Filtro = ({onClose, onApply}) => {
                     <Button
                         icon="broom"
                         mode="contained"
-                        style={[styles.button, { backgroundColor: '#E50914', borderColor: '#E50914',}]}
+                        style={[FiltroStyles.button, { backgroundColor: '#E50914', borderColor: '#E50914',}]}
                         rippleColor="#E50914"
                         onPress={() => {
                             setGenero('acao');
@@ -241,63 +242,11 @@ const Filtro = ({onClose, onApply}) => {
 
                         Limpar
                     </Button>
-                    <Button style={styles.button} labelStyle={styles.text} onPress={() => onClose()}>Fechar</Button>
+                    <Button style={FiltroStyles.button} labelStyle={FiltroStyles.text} onPress={() => onClose()}>Fechar</Button>
                     </ScrollView>
                     </KeyboardAvoidingView>
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: '#fff',
-        zIndex: 999,
-        padding: 16,
-    },
-    sectionTitle: {
-        fontSize: 20,
-        fontWeight: '500',
-        marginBottom: 8,
-    },
-    input: {
-        marginBottom: 10,
-        backgroundColor: '#F3F3F3',
-    },
-    button: {
-        borderWidth: 1,
-        borderRadius: 12,
-        borderColor: '#1B1F3B',
-        padding: 7,
-        backgroundColor: 'white',
-        marginVertical: 5,
-    },
-    text: {
-        color: '#1B1F3B',
-        fontSize: 15,
-    },
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginBottom: 10,
-    },
-    generoButton: {
-        borderWidth: 1,
-        borderColor: '#1B1F3B',
-        borderRadius: 8,
-        padding: 10,
-        backgroundColor: '#fff',
-        flex: 1,
-        marginHorizontal: 5,
-        alignItems: 'center',
-  },
-  generoButtonSelected: {
-        backgroundColor: '#1B1F3B',
-  },
-});
 
         export default Filtro;

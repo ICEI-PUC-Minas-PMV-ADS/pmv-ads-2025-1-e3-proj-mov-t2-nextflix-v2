@@ -9,7 +9,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import UserProfile from './screens/UserProfile';
 import UserCreate from './screens/UserCreate';
-import Filtro from './screens/Filtro';
 import Login from './screens/Login';
 import ResetSenha from './screens/ResetSenha';
 import Home from './screens/Home';  // Importa a Home do time
@@ -24,7 +23,7 @@ export default function App() {
         icon: (props) => <Icon {...props} />,
     }}> 
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="Login">
             <Stack.Screen
               name="Login"
               component={Login}
@@ -38,11 +37,6 @@ export default function App() {
             <Stack.Screen
               name="Home"
               component={Home}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Filtro"
-              component={Filtro}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
