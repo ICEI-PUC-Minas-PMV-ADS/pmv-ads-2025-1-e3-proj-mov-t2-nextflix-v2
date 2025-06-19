@@ -80,6 +80,12 @@ export default function Login({ navigation }) {
             <TouchableOpacity onPress={() => Alert.alert('Cadastro', 'Tela de cadastro do colega ainda não integrada.')}>
               <Text style={styles.link}>Não tem conta? Cadastre-se</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                    style={[styles.button, { backgroundColor: '#1B1F3B' }]}
+                    onPress={() => navigation.navigate('UserCreate')}
+                  >
+                    <Text style={styles.buttonText}>Editar Cadastro</Text>
+                  </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('ResetSenha')}>
               <Text style={styles.link}>Esqueceu a senha?</Text>
             </TouchableOpacity>
