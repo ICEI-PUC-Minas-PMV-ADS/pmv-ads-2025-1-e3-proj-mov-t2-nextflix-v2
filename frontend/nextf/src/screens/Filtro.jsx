@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, StyleSheet, ScrollView, Platform, KeyboardAvoidingView, } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView, } from 'react-native';
 import {
-    Modal,
-    Portal,
     Text,
     TextInput,
     Button,
@@ -12,12 +10,10 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 
-console.log('DEBUG:', Modal);
 console.log('DEBUG:', KeyboardAvoidingView);
 
 
-const Filtro = ({onClose}) => {
-    const [visible, setVisible] = useState(false);
+const Filtro = ({onClose, onApply}) => {
     const [genero, setGenero] = useState('acao');
     const [avaliacao, setAvaliacao] = useState('');
     const [date, setDate] = useState(new Date());
@@ -67,11 +63,6 @@ const Filtro = ({onClose}) => {
 
     return (
         <View style={styles.container}>
-            <Portal>
-                <Modal
-                    visible={visible}
-                    onDismiss={() => setVisible(false)}
-                    contentContainerStyle={styles.modal}>
                     <KeyboardAvoidingView>
                           <ScrollView
                           contentContainerStyle={{ paddingBottom: 20 }}
@@ -192,7 +183,7 @@ const Filtro = ({onClose}) => {
                         title={ordem || 'Escolha'}
                         expanded={ordenacaoOpen}
                         onPress={() => setOrdenacaoOpen(!ordenacaoOpen)}>
-                            {['relevância', 'avaliações', 'data', 'duração'].map((opcao) => (
+                            {['Nome', 'avaliações', 'data', 'duração'].map((opcao) => (
                                 <Button
                                   key={opcao}
                                   mode="contained"
@@ -216,7 +207,23 @@ const Filtro = ({onClose}) => {
                         mode="contained"
                         style={styles.button}
                         labelStyle={styles.text}
-                        onPress={() => {aplicarFiltros(); onClose();}}>
+                        onPress={() => {
+                            const ordemConvertida = {
+                              'Nome': '1',
+                              'avaliações': '2',
+                              'data': '3',
+                              'duração': '4' // se quiser implementar no futuro
+                            }[ordem] || '1'; // valor padrão
+                            const filtrosAtivos = {
+                              genero,
+                              avaliacao,
+                              dataInicio: moment(date).format('YYYY-MM-DD'),
+                              dataFim: moment(date2).format('YYYY-MM-DD'),
+                              duracao,
+                              ordem: ordemConvertida,
+                            };
+                                onApply(filtrosAtivos);
+                            onClose();}}>
                         Aplicar
                     </Button>
                     <Button
@@ -237,35 +244,20 @@ const Filtro = ({onClose}) => {
                     <Button style={styles.button} labelStyle={styles.text} onPress={() => onClose()}>Fechar</Button>
                     </ScrollView>
                     </KeyboardAvoidingView>
-                </Modal>
-            </Portal>
-
-            <IconButton
-            mode="contained"
-            icon="filter-menu-outline"
-            iconColor="#1B1F3B"
-            rippleColor="#1B1F3B"
-            size={20}
-            onPress={() => setVisible(true)}/>
-
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
         backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
+        zIndex: 999,
         padding: 16,
-        flexWrap: 'wrap'
-    },
-    modal: {
-        backgroundColor: '#fff',
-        padding: 20,
-        marginHorizontal: 20,
-        borderRadius: 12,
     },
     sectionTitle: {
         fontSize: 20,
