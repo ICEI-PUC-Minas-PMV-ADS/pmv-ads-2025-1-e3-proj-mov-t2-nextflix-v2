@@ -1,8 +1,33 @@
 import React from 'react';
-import User2 from './screens/User2';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const App = () => {
-  return <User2 />;
-};
+import Login from './screens/Login';
+import ResetSenha from './screens/ResetSenha';
+import Home from './screens/Home';  // Importa a Home do time
 
-export default App;
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ResetSenha"
+          component={ResetSenha}
+          options={{ title: 'Redefinir Senha' }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}

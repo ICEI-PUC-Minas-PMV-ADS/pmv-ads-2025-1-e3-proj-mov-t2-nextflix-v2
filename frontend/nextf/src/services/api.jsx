@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+// Usa o endereço especial 10.0.2.2 e a porta correta 5075.
+const API_URL = 'http://10.0.2.2:5075/api';
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // ajuste para seu backend (pode ser IP do emulador)
+  baseURL: API_URL,
 });
 
 export default api;
