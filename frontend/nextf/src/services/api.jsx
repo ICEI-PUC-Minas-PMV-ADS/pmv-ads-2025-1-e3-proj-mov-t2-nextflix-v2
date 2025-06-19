@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+// Usa o endereço especial 10.0.2.2 e a porta correta 5075.
+const API_URL = 'http://10.0.2.2:5075/api';
+
 const api = axios.create({
-  baseURL: 'http://10.0.2.2:5000/api', // IP local da sua máquina
-  timeout: 10000, // opcional: evita travamento em chamadas lentas
+  baseURL: API_URL,
 });
 
 export default api;
