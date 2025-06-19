@@ -115,8 +115,8 @@ namespace Nextflix.Controllers
             if (!string.IsNullOrEmpty(filter.Genero))
                 query = query.Where(f => f.Genre == filter.Genero);
 
-            if (!string.IsNullOrEmpty(filter.Avaliacao))
-                query = query.Where(f => f.Rating >= int.Parse(filter.Avaliacao));
+            if (!string.IsNullOrEmpty(filter.Avaliacao) && int.TryParse(filter.Avaliacao, out int avaliacao))
+                query = query.Where(f => f.Rating >= avaliacao);
 
             if (filter.DataInicio != null)
                 query = query.Where(f => f.ReleaseDate >= filter.DataInicio);
@@ -124,46 +124,36 @@ namespace Nextflix.Controllers
             if (filter.DataFim != null)
                 query = query.Where(f => f.ReleaseDate <= filter.DataFim);
 
-            if (!string.IsNullOrEmpty(filter.Duracao))
-            {
-                switch (filter.Duracao)
-                {
-                    case "1": // menos de 1h
-                        query = query.Where(f => int.Parse(f.Duration) < 90);
-                        break;
-                    case "2": // entre 1 e 2h
-                        query = query.Where(f => int.Parse(f.Duration) >= 90 && int.Parse(f.Duration) <= 120);
-                        break;
-                    case "3": // entre 2 e 3h
-                        query = query.Where(f => int.Parse(f.Duration) > 120 && int.Parse(f.Duration) <= 150);
-                        break;
-                    case "4": // mais de 3h
-                        query = query.Where(f => int.Parse(f.Duration) > 150 && int.Parse(f.Duration) <= 180);
-                        break;
-                    case "5": // mais de 3h
-                        query = query.Where(f => int.Parse(f.Duration) > 180);
-                        break;
-                }
-            }
-
-            // Ordenação
-            switch (filter.Ordem)
-            {
-                case "1": // Relevância (exemplo: por nome)
-                    query = query.OrderBy(f => f.Name);
-                    break;
-                case "2":
-                    query = query.OrderByDescending(f => f.Rating);
-                    break;
-                case "3":
-                    query = query.OrderByDescending(f => f.ReleaseDate);
-                    break;
-                case "4":
-                    query = query.OrderByDescending(f => int.Parse(f.Duration));
-                    break;
-            }
-
             var result = await query.ToListAsync();
+
+            if (!string.IsNullOrEmpty(filter.Duracao)) //faz o filtro que precisa ser feito antes de ir pro banco ja que ele não le int.parse 
+            {
+                result = result.Where(f =>
+                {
+                    if (!int.TryParse(f.Duration, out int duracao)) return false;
+
+                    return filter.Duracao switch
+                    {
+                        "1" => duracao < 90,
+                        "2" => duracao >= 90 && duracao <= 120,
+                        "3" => duracao > 120 && duracao <= 150,
+                        "4" => duracao > 150 && duracao <= 180,
+                        "5" => duracao > 180,
+                        _ => true
+                    };
+                }).ToList();
+            }
+
+            // Ordenação final (também já em memória)
+            result = filter.Ordem switch
+            {
+                "1" => result.OrderBy(f => f.Name).ToList(),
+                "2" => result.OrderByDescending(f => f.Rating).ToList(),
+                "3" => result.OrderByDescending(f => f.ReleaseDate).ToList(),
+                "4" => result.OrderByDescending(f => int.TryParse(f.Duration, out var d) ? d : 0).ToList(),
+                _ => result
+            };
+
             return Ok(result);
         }
 
