@@ -115,9 +115,6 @@ namespace Nextflix.Controllers
             if (!string.IsNullOrEmpty(filter.Genero))
                 query = query.Where(f => f.Genre == filter.Genero);
 
-            if (!string.IsNullOrEmpty(filter.Avaliacao) && int.TryParse(filter.Avaliacao, out int avaliacao))
-                query = query.Where(f => f.Rating >= avaliacao);
-
             if (filter.DataInicio != null)
                 query = query.Where(f => f.ReleaseDate >= filter.DataInicio);
 
@@ -148,7 +145,6 @@ namespace Nextflix.Controllers
             result = filter.Ordem switch
             {
                 "1" => result.OrderBy(f => f.Name).ToList(),
-                "2" => result.OrderByDescending(f => f.Rating).ToList(),
                 "3" => result.OrderByDescending(f => f.ReleaseDate).ToList(),
                 "4" => result.OrderByDescending(f => int.TryParse(f.Duration, out var d) ? d : 0).ToList(),
                 _ => result
