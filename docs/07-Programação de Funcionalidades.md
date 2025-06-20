@@ -12,10 +12,10 @@ A tabela a seguir apresenta as funcionalidades criadas, com seus artefatos, e os
 |RF-001| A aplicação deve permitir que o usuário se cadastre.  | UserCreate.jsx UserProfile.jsx User.cs UserController.cs | Artur |
 |RF-002| A aplicação deve permitir que o usuário faça o login em seu perfil. | Login.jsx, ResetSenha.jsx | Hana |
 |RF-003| O perfil do usuário deve conter as avaliações e comentários feitos por ele. 
-|RF-004| A aplicação deve permitir que o usuário busque títulos por nome, gênero e/ou avaliação. 
+|RF-004| A aplicação deve permitir que o usuário busque títulos por nome, gênero e/ou avaliação. | Filtro.jsx, FilmsController.cs Home.jsx| Giovanni, Eduardo| 
 |RF-005| A aplicação deve permitir que o usuário veja reviews e a avaliação dos títulos dadas pelos outros usuários.
 |RF-006| A aplicação deve permitir que o usuário avalie um título com uma nota de 1 a 5 estrelas.
-|RF-007| A aplicação deve prover ao usuário informações gerais sobre o título (sinopse, duração, classificação indicativa, elenco, média das avaliações).
+|RF-007| A aplicação deve prover ao usuário informações gerais sobre o título (sinopse, duração, classificação indicativa, elenco, média das avaliações). | Home.jsx| Eduardo|
 |RF-008| A aplicação deve permitir que o usuário salve títulos em listas personalizadas.
 |RF-009| A aplicação deve permitir que o usuário faça um comentário sobre um título.
 |RF-010| A aplicação deve prover ao usuário uma lista com recomendações de títulos baseados em sua preferência e histórico. 
