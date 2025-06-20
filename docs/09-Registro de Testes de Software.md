@@ -142,6 +142,55 @@ Confirmar que os dados do usuário estão sendo salvos no banco.
 - **Versão da Aplicação Testada:** 1.0.0  
 - **Plano de Testes:** User 
 
+---
 
 
+**Informações Gerais:**
 
+- **Data:** 19/06/2025  
+- **Responsável pelos Testes:** Giovanni Gonçalves Shintaku
+- **Versão da Aplicação Testada:** 1.0.0 (Frontend)    
+- **Plano de Testes:** Home/Filtro – Exibição de Filmes ao Pesquisar pelo Filtro  
+
+---
+
+### **Caso de Teste 5: Home – Exibição de Filmes ao Pesquisar pela Barra de Pesquisa**
+
+- **Requisitos Referentes:** Filtro   
+- **Descrição:** Verificar se a Home retorna corretamente os filmes quando são pesquisados pelo Filtro.  
+- **Objetivo do Teste:** Assegurar que o usuário visualize corretamente os filmes ao pesquisar pelo Filtro.
+
+---
+
+#### **Passos:**
+
+1. **Abrir o aplicativo, fazer Login e aguardar o carregamento da Home.**
+2. **Verificar ao lado da barra de pesquisa se o botão do filtro está visível e funcional.**
+3. **Passar os parâmetros pelos quais se quer pesquisar.**
+4. **Apertar "Aplicar".**
+5. **Verificar se os resultados aparecem rapidamente e com boa legibilidade.**
+
+---
+
+#### **Critérios de Êxito:**
+
+1. **O botão do filtro funciona corretamente e é visível.**
+2. **As informações de filmes aparecem legíveis (título, imagem e avaliação).**
+3. **Os filmes pesquisados aparecem corretamente e correspondem ao termo de pesquisa.**
+4. **Quando não há resultados, uma mensagem adequada de "Nenhum filme encontrado" é exibida.**
+5. **O tempo de resposta para exibir os filmes pesquisados é rápido.**
+
+---
+
+![botão do filtro](https://github.com/GiovanniShintaku/imageDump/blob/main/FiltroOpen.png)
+![botão do filtro](https://github.com/GiovanniShintaku/imageDump/blob/main/FiltroAplicando.png)
+![botão do filtro](https://github.com/GiovanniShintaku/imageDump/blob/main/HomePosFiltro.png)
+
+#### **Resultados:**
+
+- **Passos 1-5:** Aprovado (Frontend exibiu os resultados corretamente de acordo com os parâmetros aplicados)  
+- **Observações:**   
+  - **Consulta feita apenas no Front End**
+
+
+---
