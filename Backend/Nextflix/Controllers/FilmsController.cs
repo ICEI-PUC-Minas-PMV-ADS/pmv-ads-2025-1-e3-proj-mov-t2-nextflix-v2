@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nextflix.Data;
 using Nextflix.Models;
+using Nextflix.DTOs;
 
 namespace Nextflix.Controllers
 {
@@ -104,5 +105,53 @@ namespace Nextflix.Controllers
         {
             return _context.Movies.Any(e => e.MovieId == MovieID);
         }
+
+        // POST: api/Films/filter
+        [HttpPost("filter")]
+        public async Task<ActionResult<IEnumerable<Movie>>> FilterFilms([FromBody] MovieFilterDTO filter)
+        {
+            var query = _context.Movies.AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter.Genero))
+                query = query.Where(f => f.Genre == filter.Genero);
+
+            if (filter.DataInicio != null)
+                query = query.Where(f => f.ReleaseDate >= filter.DataInicio);
+
+            if (filter.DataFim != null)
+                query = query.Where(f => f.ReleaseDate <= filter.DataFim);
+
+            var result = await query.ToListAsync();
+
+            if (!string.IsNullOrEmpty(filter.Duracao)) //faz o filtro que precisa ser feito antes de ir pro banco ja que ele não le int.parse 
+            {
+                result = result.Where(f =>
+                {
+                    if (!int.TryParse(f.Duration, out int duracao)) return false;
+
+                    return filter.Duracao switch
+                    {
+                        "1" => duracao < 90,
+                        "2" => duracao >= 90 && duracao <= 120,
+                        "3" => duracao > 120 && duracao <= 150,
+                        "4" => duracao > 150 && duracao <= 180,
+                        "5" => duracao > 180,
+                        _ => true
+                    };
+                }).ToList();
+            }
+
+            // Ordenação final (também já em memória)
+            result = filter.Ordem switch
+            {
+                "1" => result.OrderBy(f => f.Name).ToList(),
+                "3" => result.OrderByDescending(f => f.ReleaseDate).ToList(),
+                "4" => result.OrderByDescending(f => int.TryParse(f.Duration, out var d) ? d : 0).ToList(),
+                _ => result
+            };
+
+            return Ok(result);
+        }
+
     }
 }
