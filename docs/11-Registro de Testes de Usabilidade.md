@@ -8,8 +8,9 @@
   - Eduardo Coutinho da Silva Junior
   - Hana Karolina Neves Siqueira
   - Artur Maciel de Assis Pinto
+  - Giovanni Gonçalves Shintaku
 - **Ambiente de Teste:** Aplicação React Native com integração parcial ao backend
-- **Objetivo:** Avaliar a usabilidade das principais funcionalidades da aplicação NextFlix, incluindo barra de pesquisa, autenticação e edição de perfil.
+- **Objetivo:** Avaliar a usabilidade das principais funcionalidades da aplicação NextFlix, incluindo barra de pesquisa, filtro de pesquisa, autenticação e edição de perfil.
 
 ---
 
@@ -57,6 +58,14 @@
 
 ---
 
+### TU-007 – Filtro em uso e retorno da busca
+
+- **Descrição:**O Usuário deve conseguir usar o filtro de filmes na tela Home
+
+![Botao filtro na pag Home](../imagens-usabilidade/filtro.png)
+![Filtro preenchido](../imagens-usabilidade/filtroFull.png)
+![Home após filtro aplicado](../imagens-usabilidade/filtroAplicado.png)
+
 ## 📊 Resultados dos Testes
 
 | Caso de Teste | Resultado   | Observações                                                        |
@@ -66,6 +75,8 @@
 | TU-003        | ✅ Aprovado | Processo de redefinição de senha concluído com sucesso.            |
 | TU-004        | ✅ Aprovado | Barra de pesquisa retornou resultados relevantes e legíveis.       |
 | TU-005        | ✅ Aprovado | Mensagem de "Nenhum filme encontrado" exibida corretamente.        |
+| TU-007        | ✅ Aprovado | Usuário conseguiu utilizar a funcionalidade Filtro que retornou resultados plausíveis |
+
 
 ---
 
@@ -78,6 +89,7 @@
 | TU-003 | O usuário deve localizar a opção de redefinição de senha e realizar o processo.               | Processo fácil de encontrar, mas faltou animação ou carregamento claro. |
 | TU-004 | O usuário deve conseguir utilizar a barra de pesquisa para encontrar filmes.                  | Pesquisa rápida e eficaz. Resultados bem exibidos.                      |
 | TU-005 | O sistema deve exibir corretamente a mensagem "Nenhum filme encontrado".                      | Mensagem clara, mas poderia vir acompanhada de sugestão de busca.       |
+| TU-007 | O Usuário deve conseguir usar o filtro de filmes na tela Home                                 | o filtro foi bem intuitivo mas não deixou espaço para margem de erro nos resultados      |
 
 ---
 
