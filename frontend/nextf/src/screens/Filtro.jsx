@@ -1,48 +1,37 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView, } from 'react-native';
 import {
-    Modal,
-    Portal,
     Text,
     TextInput,
     Button,
-    Provider as PaperProvider,
-    RadioButton,
     List,
+    IconButton,
 } from 'react-native-paper';
-import moment from 'moment';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment';
+import FiltroStyles from '../styles/FiltroStyle';
 
-{ /* render no expo apenas
+console.log('DEBUG:', KeyboardAvoidingView);
 
-export default function App() {
-  return (
-    <PaperProvider>
-      <Filtro />
-    </PaperProvider>
-  );
-}
 
-   */  }
-
-const Filtro = () => {
-    const [visible, setVisible] = useState(false);
+const Filtro = ({onClose, onApply}) => {
     const [genero, setGenero] = useState('acao');
     const [avaliacao, setAvaliacao] = useState('');
     const [date, setDate] = useState(new Date());
     const [date2, setDate2] = useState(new Date());
-    const [showDate1, setShowDate1] = useState(false);
-    const [showDate2, setShowDate2] = useState(false);
     const [duracao, setDuracao] = useState('');
     const [ordem, setOrdem] = useState('');
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [activeDateField, setActiveDateField] = useState(null);
+    const [avaOpen, setAvaOpen] = useState(false);
+    const [duracaoOpen, setDuracaoOpen] = useState(false);
+    const [ordenacaoOpen, setOrdenacaoOpen] = useState(false);
 
     const formatDate = (date) => {
         return date.toLocaleDateString('pt-BR');
     };
 
-    {/* criando JSON oara mandar para o BackEnd */ }
+    // criando JSON oara mandar para o BackEnd
 
     const aplicarFiltros = async () => {
         const filtros = {
@@ -56,7 +45,7 @@ const Filtro = () => {
 
         console.log('Filtros a enviar:', filtros);
 
-        fetch('http://192.168.0.1:5075/api/films', {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -74,37 +63,52 @@ const Filtro = () => {
     };
 
     return (
-        <View style={styles.container}>
-            <Text>Teste de renderizaÁ„o</Text>
-            <Portal>
-                <Modal
-                    visible={visible}
-                    onDismiss={() => setVisible(false)}
-                    contentContainerStyle={styles.modal}>
-                    {/* GÍnero */}
-                    <Text style={styles.sectionTitle}>GÍnero:</Text>
-                    <RadioButton.Group onValueChange={setGenero} value={genero}>
-                        <RadioButton.Item label="AÁ„o" value="acao" />
-                        <RadioButton.Item label="ComÈdia" value="comedia" />
-                        <RadioButton.Item label="Drama" value="drama" />
-                    </RadioButton.Group>
+        <View style={FiltroStyles.container}>
+                    <KeyboardAvoidingView>
+                          <ScrollView
+                          contentContainerStyle={{ paddingBottom: 20 }}
+                           keyboardShouldPersistTaps="handled">
 
-                    {/* AvaliaÁ„o mÌnima */}
-                    <List.Section title="AvaliaÁ„o mÌnima" style={styles.sectionTitle}>
-                        <List.Accordion title="Escolha">
+                    {/* GÔøΩnero */}
+                     <Text style={FiltroStyles.sectionTitle}>  G√™nero:</Text>
+                                    <View style={FiltroStyles.row}>
+                                      {['acao', 'comedia', 'drama'].map((tipo) => (
+                                        <TouchableOpacity
+                                          key={tipo}
+                                          style={[
+                                            FiltroStyles.generoButton,
+                                            genero === tipo && FiltroStyles.generoButtonSelected,
+                                          ]}
+                                          onPress={() => {setGenero(tipo); console.log(tipo);}}
+                                        >
+                                          <Text style={{ color: genero === tipo ? '#fff' : '#1B1F3B' }}>
+                                            {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+                                          </Text>
+                                        </TouchableOpacity>
+                                      ))}
+                                    </View>
+
+                    {/* Avalia√ß√£o m√≠nima */}
+                    <List.Section title="Avalia√ß√£o m√≠nima" titleStyle={FiltroStyles.sectionTitle}>
+                        <List.Accordion
+                        title={avaliacao ? `${avaliacao} ‚≠ê` : 'Escolha'}
+                        style={FiltroStyles.button}
+                        expanded={avaOpen}
+                        onPress={() => setAvaOpen(!avaOpen)}>
                             {[1, 2, 3, 4, 5].map((n) => (
-                                <Button key={n} mode="contained" style={styles.button} onPress={() => setAvaliacao(String(n))}>
-                                    {n} estrela{n > 1 ? 's' : ''}
+                                <Button key={n} mode="contained" style={FiltroStyles.button} labelStyle={FiltroStyles.text} onPress={() => {setAvaliacao(String(n)); setAvaOpen(false); console.log(String(n));}}>
+                                    {n} ‚≠ê
                                 </Button>
                             ))}
                         </List.Accordion>
                     </List.Section>
 
-                    {/* Data de lanÁamento */}
-                    <Text style={styles.sectionTitle}>Ano de LanÁamento:</Text>
+                    {/* Data de lan√ßamento */}
+                    <Text style={FiltroStyles.sectionTitle}> Ano de Lan√ßamento:</Text>
 
                     <TouchableOpacity
                         onPress={() => {
+                             console.log('Abrindo DatePicker para De');
                             setShowDatePicker(true);
                             setActiveDateField('from');
                         }}
@@ -112,24 +116,25 @@ const Filtro = () => {
                         <TextInput
                             label="De"
                             value={formatDate(date)}
-                            left={<TextInput.Icon icon="calendar" />}
+                            left={<TextInput.Icon icon="calendar-blank" disabled={true} />}
                             editable={false}
-                            style={styles.input}
+                            style={FiltroStyles.input}
                         />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => {
+                             console.log('Abrindo DatePicker para At√©');
                             setShowDatePicker(true);
                             setActiveDateField('to');
                         }}
                     >
                         <TextInput
-                            label="AtÈ"
+                            label="At√©"
                             value={formatDate(date2)}
-                            left={<TextInput.Icon icon="calendar" />}
+                            left={<TextInput.Icon icon="calendar" disabled={true}/>}
                             editable={false}
-                            style={styles.input}
+                            style={FiltroStyles.input}
                         />
                     </TouchableOpacity>
 
@@ -147,101 +152,101 @@ const Filtro = () => {
                         />
                     )}
 
-                    {/* DuraÁ„o */}
-                    <List.Section title="DuraÁ„o" style={styles.sectionTitle}>
-                        <List.Accordion>
-                            <Button mode="contained" style={styles.button} onPress={() => setDuracao('1')}>
-                                Menos que 1 hora
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setDuracao('2')}>
-                                Entre 1 e 2 horas
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setDuracao('3')}>
-                                Entre 2 e 3 horas
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setDuracao('4')}>
-                                Mais que 3 horas
-                            </Button>
+                    {/* Dura√ß√£o */}
+                    <List.Section title="Dura√ß√£o" titleStyle={FiltroStyles.sectionTitle}>
+                        <List.Accordion
+                          style={FiltroStyles.button}
+                          title={duracao ? `${duracao} min` : 'Escolha'}
+                          expanded={duracaoOpen}
+                          onPress={() => setDuracaoOpen(!duracaoOpen)}>
+                            {['-90', '90', '120', '150', '180+'].map((n) => (
+                                <Button
+                                  key={n}
+                                  mode="contained"
+                                  onPress={() => {
+                                    setDuracao(n);
+                                    setDuracaoOpen(false);
+                                    console.log(n);
+                                  }}
+                                  style={FiltroStyles.button}
+                                  labelStyle={FiltroStyles.text}
+                                >
+                                  {n} min
+                                </Button>
+                              ))}
                         </List.Accordion>
                     </List.Section>
 
                     {/* Ordenar por */}
-                    <List.Section title="Ordenar por:" style={styles.sectionTitle}>
-                        <List.Accordion>
-                            <Button mode="contained" style={styles.button} onPress={() => setOrdem('relevancia')}>
-                                Relev‚ncia
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setOrdem('avaliacoes')}>
-                                AvaliaÁıes
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setOrdem('data')}>
-                                Data de lanÁamento
-                            </Button>
-                            <Button mode="contained" style={styles.button} onPress={() => setOrdem('duracao')}>
-                                DuraÁ„o
-                            </Button>
+                    <List.Section title="Ordenar por:" titleStyle={FiltroStyles.sectionTitle}>
+                        <List.Accordion
+                        style={FiltroStyles.button}
+                        title={ordem || 'Escolha'}
+                        expanded={ordenacaoOpen}
+                        onPress={() => setOrdenacaoOpen(!ordenacaoOpen)}>
+                            {['Nome', 'avalia√ß√µes', 'data', 'dura√ß√£o'].map((opcao) => (
+                                <Button
+                                  key={opcao}
+                                  mode="contained"
+                                  onPress={() => {
+                                    setOrdem(opcao);
+                                    setOrdenacaoOpen(false);
+                                    console.log(opcao);
+                                  }}
+                                  style={FiltroStyles.button}
+                                  labelStyle={FiltroStyles.text}
+                                >
+                                  {opcao}
+                                </Button>
+                              ))}
                         </List.Accordion>
                     </List.Section>
 
-                    {/* Botıes finais */}
+                    {/* BotÔøΩes finais */}
                     <Button
                         icon="check"
                         mode="contained"
-                        style={styles.button}
-                        onPress={aplicarFiltros}>
+                        style={FiltroStyles.button}
+                        labelStyle={FiltroStyles.text}
+                        onPress={() => {
+                            const ordemConvertida = {
+                              'Nome': '1',
+                              'avalia√ß√µes': '2',
+                              'data': '3',
+                              'dura√ß√£o': '4' // se quiser implementar no futuro
+                            }[ordem] || '1'; // valor padr√£o
+                            const filtrosAtivos = {
+                              genero,
+                              avaliacao,
+                              dataInicio: moment(date).format('YYYY-MM-DD'),
+                              dataFim: moment(date2).format('YYYY-MM-DD'),
+                              duracao,
+                              ordem: ordemConvertida,
+                            };
+                                onApply(filtrosAtivos);
+                            onClose();}}>
                         Aplicar
                     </Button>
                     <Button
-                        icon="star"
+                        icon="broom"
                         mode="contained"
-                        style={[styles.button, { backgroundColor: '#E50914', borderColor: '#E50914' }]}
+                        style={[FiltroStyles.button, { backgroundColor: '#E50914', borderColor: '#E50914',}]}
                         rippleColor="#E50914"
-                        onPress={() => console.log('Limpar filtros')}>
+                        onPress={() => {
+                            setGenero('acao');
+                            setAvaliacao('');
+                            setDate(new Date());
+                            setDate2(new Date());
+                            setDuracao('');
+                            setOrdem('');}}>
+
                         Limpar
                     </Button>
-                    <Button style={styles.button} onPress={() => setVisible(false)}>Fechar</Button>
-                </Modal>
-            </Portal>
-
-            <Button mode="contained" rippleColor="#1B1F3B" style={styles.button} onPress={() => setVisible(true)}>
-                Abrir Filtro
-            </Button>
+                    <Button style={FiltroStyles.button} labelStyle={FiltroStyles.text} onPress={() => onClose()}>Fechar</Button>
+                    </ScrollView>
+                    </KeyboardAvoidingView>
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 16,
-        flexWrap: 'wrap'
-    },
-    modal: {
-        backgroundColor: '#fff',
-        padding: 20,
-        marginHorizontal: 20,
-        borderRadius: 12,
-    },
-    sectionTitle: {
-        fontSize: 18,
-        fontWeight: 500,
-        marginBottom: 8,
-    },
-    input: {
-        marginBottom: 10,
-        backgroundColor: '#F3F3F3',
-    },
-    button: {
-        borderWidth: 1,
-        borderRadius: 12,
-        borderColor: '#1B1F3B',
-        padding: 7,
-        background: 'white',
-        marginVertical: 5,
-    },
-});
-
-export default Filtro;
+        export default Filtro;

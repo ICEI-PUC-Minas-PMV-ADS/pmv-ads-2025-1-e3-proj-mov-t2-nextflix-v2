@@ -12,8 +12,8 @@ using Nextflix.Data;
 namespace Nextflix.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250529223222_M02-nulable-user")]
-    partial class M02nulableuser
+    [Migration("20250620000609_M05AnulandoOsEfeitosDaMigracao04")]
+    partial class M05AnulandoOsEfeitosDaMigracao04
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -133,19 +133,15 @@ namespace Nextflix.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Bio")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoBase64")

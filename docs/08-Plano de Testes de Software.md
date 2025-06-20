@@ -94,6 +94,29 @@ Aluno: Hana Karolina Neves Siqueira
 
 Aluno: Hana Karolina Neves Siqueira
 
+## Caso de Teste 5: Filtro – Exibição de filmes ao pesquisar pelo menu Filtro da Home.
+
+| **Requisito Referente**  | CT - 04 - Filtro de pesquisa                                           |
+|--------------------------|----------------------------------------------------------------------|
+| **Descrição**             | Verificar se o menu Filtro de pesquisa exibe corretamente os filmes quando são pesquisados. |
+| **Objetivo do Teste**     | Assegurar que o usuário consiga usar o Filtro e visualizar corretamente os filmes ao pesquisar. |
+
+### Passos
+
+1. **Abrir o aplicativo e aguardar o carregamento da Home.**
+2. **Verificar ao lado da barra de pesquisa se o botão de Filtro está visível e funcional.**
+3. **Preencher os campos pelos quais se deseja filtrar os resultados**
+4. **Pressionar "Aplicar".**
+5. **Verificar se os resultados que aparecem são condizentes e contém boa legibilidade.**
+
+### Critérios de Êxito
+
+1. **O menu Filtro de pesquisa funciona corretamente e é visível.**
+2. **Os campos de pesquisa são funcionais e intuítivos**
+3. **Os filmes pesquisados aparecem corretamente e correspondem aos parâmetros de pesquisa.**
+4. **O tempo de resposta para exibir os filmes pesquisados é rápido.**
+
+Aluno: Giovanni Gonçalves Shintaku
 
 
 

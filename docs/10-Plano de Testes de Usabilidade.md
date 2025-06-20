@@ -25,6 +25,7 @@ O teste de usabilidade permite avaliar a qualidade da interface da aplicação i
 | TU-004 | O usuário deve conseguir usar a barra de pesquisa e visualizar os resultados.       | Home                     |
 | TU-005 | O sistema deve exibir corretamente a mensagem "Nenhum filme encontrado", se aplicável. | Home                 |
 | TU-006 | O sistema deve atualizar corretamente os dados no banco ao editar o perfil.         | Perfil / Banco de Dados  |
+| TU-007 | O Usuário deve conseguir usar o filtro de filmes na tela Home                       | Home / Filtro  |
 
 ---
 
@@ -37,6 +38,7 @@ O teste de usabilidade permite avaliar a qualidade da interface da aplicação i
 | Pesquisar filme pela barra de pesquisa       | Resultados em até 3s, com título, imagem e descrição legíveis                     | Tempo de resposta, legibilidade, relevância, exibição da mensagem "Nenhum filme encontrado"     |
 | Editar perfil                                | Dados devem ser salvos no banco de dados                                          | Navegação fluida, persistência correta, feedback claro                                          |
 | Salvar novo perfil com sucesso               | Alterações refletidas e salvas corretamente                                       | Comunicação com backend e retorno visual                                                        |
+| Pesquisar Filmes pelo menu Filtro ao lado da barra de pesquisa  | Resultados em até 3s, com título, imagem e descrição legíveis  | Comunicação com a API, legibilidade, relevância, funcionalidade                                                      |
 
 ---
 
@@ -67,6 +69,7 @@ O teste de usabilidade permite avaliar a qualidade da interface da aplicação i
 | 11/05/2025 | Hana Karolina Neves Siqueira      | Login e Redefinição de Senha                           | ✅ Aprovado |
 | 11/05/2025 | Hana Karolina Neves Siqueira      | Perfil e Cadastro do Usuário                           | ✅ Aprovado |
 | 01/06/2025 | Artur Maciel de Assis Pinto       | User – Integração e Visualização de Dados              | ✅ Aprovado |
+| 01/06/2025 | Giovanni Gonçalves Shintaku       | Filtro - Integração e retorno de Dados                 | ✅ Aprovado |
 
 ---
 
