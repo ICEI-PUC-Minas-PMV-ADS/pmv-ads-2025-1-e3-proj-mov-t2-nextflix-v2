@@ -94,7 +94,7 @@ Aluno: Hana Karolina Neves Siqueira
 
 Aluno: Hana Karolina Neves Siqueira
 
-## Caso de Teste 1: Filtro – Exibição de filmes ao pesquisar pelo menu Filtro da Home.
+## Caso de Teste 5: Filtro – Exibição de filmes ao pesquisar pelo menu Filtro da Home.
 
 | **Requisito Referente**  | CT - 04 - Filtro de pesquisa                                           |
 |--------------------------|----------------------------------------------------------------------|
